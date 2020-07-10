@@ -3,19 +3,39 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		71F30E36A2ADDC1C094AAE00 /* Pods_XuChat_XuChatUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AC54C4C576F6078DA019DA4 /* Pods_XuChat_XuChatUITests.framework */; };
+		8599BDA3029D92DBAAABF531 /* Pods_XuChatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06FC1DBAF90CF69FCF59D092 /* Pods_XuChatTests.framework */; };
+		C0409E6D891B61820705F15C /* Pods_XuChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FC8130D8791DD033E34008A /* Pods_XuChat.framework */; };
 		FE5E780824ABFC20007BDD50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5E780724ABFC20007BDD50 /* AppDelegate.swift */; };
 		FE5E780A24ABFC20007BDD50 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5E780924ABFC20007BDD50 /* SceneDelegate.swift */; };
-		FE5E780C24ABFC20007BDD50 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5E780B24ABFC20007BDD50 /* ViewController.swift */; };
+		FE5E780C24ABFC20007BDD50 /* SignInScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5E780B24ABFC20007BDD50 /* SignInScene.swift */; };
 		FE5E780F24ABFC20007BDD50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE5E780D24ABFC20007BDD50 /* Main.storyboard */; };
 		FE5E781224ABFC20007BDD50 /* XuChat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FE5E781024ABFC20007BDD50 /* XuChat.xcdatamodeld */; };
 		FE5E781424ABFC21007BDD50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE5E781324ABFC21007BDD50 /* Assets.xcassets */; };
 		FE5E781724ABFC21007BDD50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE5E781524ABFC21007BDD50 /* LaunchScreen.storyboard */; };
 		FE5E782224ABFC21007BDD50 /* XuChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5E782124ABFC21007BDD50 /* XuChatTests.swift */; };
 		FE5E782D24ABFC21007BDD50 /* XuChatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5E782C24ABFC21007BDD50 /* XuChatUITests.swift */; };
+		FE85EDAF24AC87C100841BA9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE85EDAE24AC87C100841BA9 /* GoogleService-Info.plist */; };
+		FE85EDB124AC8A7C00841BA9 /* SignUpScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE85EDB024AC8A7C00841BA9 /* SignUpScene.swift */; };
+		FE85EDB324AC97CC00841BA9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE85EDB224AC97CC00841BA9 /* User.swift */; };
+		FE85EDB624AE5B5600841BA9 /* UsersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE85EDB524AE5B5600841BA9 /* UsersCell.swift */; };
+		FE85EDB824AE5B8500841BA9 /* MessageScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE85EDB724AE5B8500841BA9 /* MessageScene.swift */; };
+		FE85EDBB24AE5DBF00841BA9 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE85EDBA24AE5DBF00841BA9 /* Constant.swift */; };
+		FE85EDBD24AE773800841BA9 /* ShuffleUserVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE85EDBC24AE773800841BA9 /* ShuffleUserVM.swift */; };
+		FE85EDBF24AFBB7E00841BA9 /* ShuffleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE85EDBE24AFBB7E00841BA9 /* ShuffleCell.swift */; };
+		FE85EDC124AFCE7A00841BA9 /* SelectImageScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE85EDC024AFCE7A00841BA9 /* SelectImageScene.swift */; };
+		FE8E059824AC820100367E5D /* ShuffleScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8E059724AC820100367E5D /* ShuffleScene.swift */; };
+		FEAFC67D24B0E78400AF6A73 /* ChattingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAFC67C24B0E78400AF6A73 /* ChattingScene.swift */; };
+		FEAFC67F24B0FD6D00AF6A73 /* ChattingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAFC67E24B0FD6D00AF6A73 /* ChattingCell.swift */; };
+		FEAFC68124B1231000AF6A73 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAFC68024B1231000AF6A73 /* Message.swift */; };
+		FEAFC68324B1240100AF6A73 /* MessageVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAFC68224B1240100AF6A73 /* MessageVM.swift */; };
+		FEAFC68524B134D000AF6A73 /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAFC68424B134D000AF6A73 /* MainTabBar.swift */; };
+		FED74D5524B466D300D1BCE5 /* NotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED74D5424B466D300D1BCE5 /* NotificationCenter.swift */; };
+		FEE7F32D24B8F3E2007AB223 /* WritingUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE7F32C24B8F3E2007AB223 /* WritingUser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,10 +56,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		06FC1DBAF90CF69FCF59D092 /* Pods_XuChatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XuChatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		56B98349FE61C9739E991E84 /* Pods-XuChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XuChat.release.xcconfig"; path = "Target Support Files/Pods-XuChat/Pods-XuChat.release.xcconfig"; sourceTree = "<group>"; };
+		5B7ED290605A14786A88F4D4 /* Pods-XuChat-XuChatUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XuChat-XuChatUITests.debug.xcconfig"; path = "Target Support Files/Pods-XuChat-XuChatUITests/Pods-XuChat-XuChatUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		5CF22F7452F8C8EA4CA1E0FC /* Pods-XuChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XuChat.debug.xcconfig"; path = "Target Support Files/Pods-XuChat/Pods-XuChat.debug.xcconfig"; sourceTree = "<group>"; };
+		5E70E39D390E4CDA36594BCC /* Pods-XuChat-XuChatUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XuChat-XuChatUITests.release.xcconfig"; path = "Target Support Files/Pods-XuChat-XuChatUITests/Pods-XuChat-XuChatUITests.release.xcconfig"; sourceTree = "<group>"; };
+		6AC54C4C576F6078DA019DA4 /* Pods_XuChat_XuChatUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XuChat_XuChatUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FC8130D8791DD033E34008A /* Pods_XuChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XuChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B50C272BFA91BDD2A9770EF3 /* Pods-XuChatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XuChatTests.debug.xcconfig"; path = "Target Support Files/Pods-XuChatTests/Pods-XuChatTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EDBCDE89013D95BF110406B5 /* Pods-XuChatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XuChatTests.release.xcconfig"; path = "Target Support Files/Pods-XuChatTests/Pods-XuChatTests.release.xcconfig"; sourceTree = "<group>"; };
 		FE5E780424ABFC20007BDD50 /* XuChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XuChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE5E780724ABFC20007BDD50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE5E780924ABFC20007BDD50 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FE5E780B24ABFC20007BDD50 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FE5E780B24ABFC20007BDD50 /* SignInScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInScene.swift; sourceTree = "<group>"; };
 		FE5E780E24ABFC20007BDD50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FE5E781124ABFC20007BDD50 /* XuChat.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = XuChat.xcdatamodel; sourceTree = "<group>"; };
 		FE5E781324ABFC21007BDD50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +80,24 @@
 		FE5E782824ABFC21007BDD50 /* XuChatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XuChatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE5E782C24ABFC21007BDD50 /* XuChatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XuChatUITests.swift; sourceTree = "<group>"; };
 		FE5E782E24ABFC21007BDD50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE85EDAE24AC87C100841BA9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FE85EDB024AC8A7C00841BA9 /* SignUpScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScene.swift; sourceTree = "<group>"; };
+		FE85EDB224AC97CC00841BA9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		FE85EDB524AE5B5600841BA9 /* UsersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersCell.swift; sourceTree = "<group>"; };
+		FE85EDB724AE5B8500841BA9 /* MessageScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageScene.swift; sourceTree = "<group>"; };
+		FE85EDBA24AE5DBF00841BA9 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		FE85EDBC24AE773800841BA9 /* ShuffleUserVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShuffleUserVM.swift; sourceTree = "<group>"; };
+		FE85EDBE24AFBB7E00841BA9 /* ShuffleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShuffleCell.swift; sourceTree = "<group>"; };
+		FE85EDC024AFCE7A00841BA9 /* SelectImageScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectImageScene.swift; sourceTree = "<group>"; };
+		FE8E059724AC820100367E5D /* ShuffleScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShuffleScene.swift; sourceTree = "<group>"; };
+		FEAFC67C24B0E78400AF6A73 /* ChattingScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingScene.swift; sourceTree = "<group>"; };
+		FEAFC67E24B0FD6D00AF6A73 /* ChattingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingCell.swift; sourceTree = "<group>"; };
+		FEAFC68024B1231000AF6A73 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		FEAFC68224B1240100AF6A73 /* MessageVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageVM.swift; sourceTree = "<group>"; };
+		FEAFC68424B134D000AF6A73 /* MainTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
+		FED74D5424B466D300D1BCE5 /* NotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenter.swift; sourceTree = "<group>"; };
+		FED74D5624B5A70700D1BCE5 /* XuChat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = XuChat.entitlements; sourceTree = "<group>"; };
+		FEE7F32C24B8F3E2007AB223 /* WritingUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingUser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0409E6D891B61820705F15C /* Pods_XuChat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8599BDA3029D92DBAAABF531 /* Pods_XuChatTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +121,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71F30E36A2ADDC1C094AAE00 /* Pods_XuChat_XuChatUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		168301325293DAA4FE62A9A4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5CF22F7452F8C8EA4CA1E0FC /* Pods-XuChat.debug.xcconfig */,
+				56B98349FE61C9739E991E84 /* Pods-XuChat.release.xcconfig */,
+				5B7ED290605A14786A88F4D4 /* Pods-XuChat-XuChatUITests.debug.xcconfig */,
+				5E70E39D390E4CDA36594BCC /* Pods-XuChat-XuChatUITests.release.xcconfig */,
+				B50C272BFA91BDD2A9770EF3 /* Pods-XuChatTests.debug.xcconfig */,
+				EDBCDE89013D95BF110406B5 /* Pods-XuChatTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		6298D60871BF375E034BADE1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7FC8130D8791DD033E34008A /* Pods_XuChat.framework */,
+				6AC54C4C576F6078DA019DA4 /* Pods_XuChat_XuChatUITests.framework */,
+				06FC1DBAF90CF69FCF59D092 /* Pods_XuChatTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FE5E77FB24ABFC20007BDD50 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +158,8 @@
 				FE5E782024ABFC21007BDD50 /* XuChatTests */,
 				FE5E782B24ABFC21007BDD50 /* XuChatUITests */,
 				FE5E780524ABFC20007BDD50 /* Products */,
+				168301325293DAA4FE62A9A4 /* Pods */,
+				6298D60871BF375E034BADE1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,10 +176,16 @@
 		FE5E780624ABFC20007BDD50 /* XuChat */ = {
 			isa = PBXGroup;
 			children = (
+				FED74D5624B5A70700D1BCE5 /* XuChat.entitlements */,
+				FE85EDB924AE5DA900841BA9 /* Core */,
+				FE8E059524AC818F00367E5D /* ViewModel */,
+				FE8E059424AC818800367E5D /* View */,
+				FE8E059324AC817C00367E5D /* Model */,
+				FE8E059624AC81B000367E5D /* StoryBoard */,
+				FE85EDB424AE5B3300841BA9 /* Cell */,
 				FE5E780724ABFC20007BDD50 /* AppDelegate.swift */,
 				FE5E780924ABFC20007BDD50 /* SceneDelegate.swift */,
-				FE5E780B24ABFC20007BDD50 /* ViewController.swift */,
-				FE5E780D24ABFC20007BDD50 /* Main.storyboard */,
+				FE85EDAE24AC87C100841BA9 /* GoogleService-Info.plist */,
 				FE5E781324ABFC21007BDD50 /* Assets.xcassets */,
 				FE5E781524ABFC21007BDD50 /* LaunchScreen.storyboard */,
 				FE5E781824ABFC21007BDD50 /* Info.plist */,
@@ -131,6 +212,82 @@
 			path = XuChatUITests;
 			sourceTree = "<group>";
 		};
+		FE85EDB424AE5B3300841BA9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FE85EDB524AE5B5600841BA9 /* UsersCell.swift */,
+				FE85EDBE24AFBB7E00841BA9 /* ShuffleCell.swift */,
+				FEAFC67E24B0FD6D00AF6A73 /* ChattingCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		FE85EDB924AE5DA900841BA9 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				FED74D5324B466B800D1BCE5 /* Extension */,
+				FE85EDC524AFECF700841BA9 /* Constant */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		FE85EDC524AFECF700841BA9 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				FE85EDBA24AE5DBF00841BA9 /* Constant.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		FE8E059324AC817C00367E5D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FE85EDB224AC97CC00841BA9 /* User.swift */,
+				FEAFC68024B1231000AF6A73 /* Message.swift */,
+				FEE7F32C24B8F3E2007AB223 /* WritingUser.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FE8E059424AC818800367E5D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FE5E780B24ABFC20007BDD50 /* SignInScene.swift */,
+				FE8E059724AC820100367E5D /* ShuffleScene.swift */,
+				FE85EDB024AC8A7C00841BA9 /* SignUpScene.swift */,
+				FE85EDB724AE5B8500841BA9 /* MessageScene.swift */,
+				FE85EDC024AFCE7A00841BA9 /* SelectImageScene.swift */,
+				FEAFC67C24B0E78400AF6A73 /* ChattingScene.swift */,
+				FEAFC68424B134D000AF6A73 /* MainTabBar.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FE8E059524AC818F00367E5D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FE85EDBC24AE773800841BA9 /* ShuffleUserVM.swift */,
+				FEAFC68224B1240100AF6A73 /* MessageVM.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FE8E059624AC81B000367E5D /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				FE5E780D24ABFC20007BDD50 /* Main.storyboard */,
+			);
+			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+		FED74D5324B466B800D1BCE5 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FED74D5424B466D300D1BCE5 /* NotificationCenter.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,9 +295,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FE5E783124ABFC21007BDD50 /* Build configuration list for PBXNativeTarget "XuChat" */;
 			buildPhases = (
+				158A332FF6304FE54E2C886B /* [CP] Check Pods Manifest.lock */,
 				FE5E780024ABFC20007BDD50 /* Sources */,
 				FE5E780124ABFC20007BDD50 /* Frameworks */,
 				FE5E780224ABFC20007BDD50 /* Resources */,
+				8734B418AA0249D4945DF18E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -155,6 +314,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FE5E783424ABFC21007BDD50 /* Build configuration list for PBXNativeTarget "XuChatTests" */;
 			buildPhases = (
+				928C23C52AAE42A03A8CB38A /* [CP] Check Pods Manifest.lock */,
 				FE5E781924ABFC21007BDD50 /* Sources */,
 				FE5E781A24ABFC21007BDD50 /* Frameworks */,
 				FE5E781B24ABFC21007BDD50 /* Resources */,
@@ -173,9 +333,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FE5E783724ABFC21007BDD50 /* Build configuration list for PBXNativeTarget "XuChatUITests" */;
 			buildPhases = (
+				0181D1E4877487D4E50E9FFE /* [CP] Check Pods Manifest.lock */,
 				FE5E782424ABFC21007BDD50 /* Sources */,
 				FE5E782524ABFC21007BDD50 /* Frameworks */,
 				FE5E782624ABFC21007BDD50 /* Resources */,
+				9CCA4466BCF4BCA72164111C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -236,6 +398,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE5E781724ABFC21007BDD50 /* LaunchScreen.storyboard in Resources */,
+				FE85EDAF24AC87C100841BA9 /* GoogleService-Info.plist in Resources */,
 				FE5E781424ABFC21007BDD50 /* Assets.xcassets in Resources */,
 				FE5E780F24ABFC20007BDD50 /* Main.storyboard in Resources */,
 			);
@@ -257,15 +420,134 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0181D1E4877487D4E50E9FFE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XuChat-XuChatUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		158A332FF6304FE54E2C886B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XuChat-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8734B418AA0249D4945DF18E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-XuChat/Pods-XuChat-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-XuChat/Pods-XuChat-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-XuChat/Pods-XuChat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		928C23C52AAE42A03A8CB38A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XuChatTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9CCA4466BCF4BCA72164111C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-XuChat-XuChatUITests/Pods-XuChat-XuChatUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-XuChat-XuChatUITests/Pods-XuChat-XuChatUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-XuChat-XuChatUITests/Pods-XuChat-XuChatUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FE5E780024ABFC20007BDD50 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEAFC68524B134D000AF6A73 /* MainTabBar.swift in Sources */,
 				FE5E781224ABFC20007BDD50 /* XuChat.xcdatamodeld in Sources */,
-				FE5E780C24ABFC20007BDD50 /* ViewController.swift in Sources */,
+				FE85EDBF24AFBB7E00841BA9 /* ShuffleCell.swift in Sources */,
+				FEAFC67D24B0E78400AF6A73 /* ChattingScene.swift in Sources */,
+				FE85EDBD24AE773800841BA9 /* ShuffleUserVM.swift in Sources */,
+				FED74D5524B466D300D1BCE5 /* NotificationCenter.swift in Sources */,
+				FE5E780C24ABFC20007BDD50 /* SignInScene.swift in Sources */,
+				FE85EDB124AC8A7C00841BA9 /* SignUpScene.swift in Sources */,
 				FE5E780824ABFC20007BDD50 /* AppDelegate.swift in Sources */,
+				FE85EDB624AE5B5600841BA9 /* UsersCell.swift in Sources */,
 				FE5E780A24ABFC20007BDD50 /* SceneDelegate.swift in Sources */,
+				FE85EDC124AFCE7A00841BA9 /* SelectImageScene.swift in Sources */,
+				FEAFC67F24B0FD6D00AF6A73 /* ChattingCell.swift in Sources */,
+				FE8E059824AC820100367E5D /* ShuffleScene.swift in Sources */,
+				FE85EDBB24AE5DBF00841BA9 /* Constant.swift in Sources */,
+				FEE7F32D24B8F3E2007AB223 /* WritingUser.swift in Sources */,
+				FEAFC68124B1231000AF6A73 /* Message.swift in Sources */,
+				FE85EDB324AC97CC00841BA9 /* User.swift in Sources */,
+				FE85EDB824AE5B8500841BA9 /* MessageScene.swift in Sources */,
+				FEAFC68324B1240100AF6A73 /* MessageVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,8 +718,11 @@
 		};
 		FE5E783224ABFC21007BDD50 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5CF22F7452F8C8EA4CA1E0FC /* Pods-XuChat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = XuChat/XuChat.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 99WQTJ75LR;
 				INFOPLIST_FILE = XuChat/Info.plist;
@@ -447,6 +732,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = xuchat.XuChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -454,8 +740,11 @@
 		};
 		FE5E783324ABFC21007BDD50 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 56B98349FE61C9739E991E84 /* Pods-XuChat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = XuChat/XuChat.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 99WQTJ75LR;
 				INFOPLIST_FILE = XuChat/Info.plist;
@@ -465,6 +754,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = xuchat.XuChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -472,6 +762,7 @@
 		};
 		FE5E783524ABFC21007BDD50 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B50C272BFA91BDD2A9770EF3 /* Pods-XuChatTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -494,6 +785,7 @@
 		};
 		FE5E783624ABFC21007BDD50 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EDBCDE89013D95BF110406B5 /* Pods-XuChatTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -516,6 +808,7 @@
 		};
 		FE5E783824ABFC21007BDD50 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B7ED290605A14786A88F4D4 /* Pods-XuChat-XuChatUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -536,6 +829,7 @@
 		};
 		FE5E783924ABFC21007BDD50 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E70E39D390E4CDA36594BCC /* Pods-XuChat-XuChatUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
