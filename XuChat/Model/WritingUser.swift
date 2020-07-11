@@ -9,7 +9,7 @@
 import Foundation
 import FirebaseFirestore
 
-class UserStatus{
+class WritingUserStatus{
     
     let isWriting : Bool
     let time : Timestamp

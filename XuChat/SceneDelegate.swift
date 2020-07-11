@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseFirestore
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -28,7 +29,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }else{
             window?.rootViewController = signIn
         }
-        
+        FireStoreHelper.shared.setUserStatus(isOnline: true, permission: true, time: Timestamp(date: Date()))
         window?.makeKeyAndVisible()
     }
 
@@ -37,11 +38,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This occurs shortly after the scene enters the background, or when its session is discarded.
         // Release any resources associated with this scene that can be re-created the next time the scene connects.
         // The scene may re-connect later, as its session was not neccessarily discarded (see `application:didDiscardSceneSessions` instead).
+        
+        FireStoreHelper.shared.setUserStatus(isOnline: false, permission: true, time: Timestamp(date: Date()))
+        
     }
 
     func sceneDidBecomeActive(_ scene: UIScene) {
         // Called when the scene has moved from an inactive state to an active state.
         // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
+        
     }
 
     func sceneWillResignActive(_ scene: UIScene) {
@@ -52,6 +57,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneWillEnterForeground(_ scene: UIScene) {
         // Called as the scene transitions from the background to the foreground.
         // Use this method to undo the changes made on entering the background.
+        FireStoreHelper.shared.setUserStatus(isOnline: true, permission: true, time: Timestamp(date: Date()))
+
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {
@@ -61,6 +68,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Save changes in the application's managed object context when the application transitions to the background.
         (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
+        FireStoreHelper.shared.setUserStatus(isOnline: false, permission: true, time: Timestamp(date: Date()))
+
+        
     }
 
 

@@ -94,7 +94,7 @@ class MessageVM{
         }
     }
     
-    func writingStatus(status: UserStatus){
+    func setWritingStatus(status: WritingUserStatus){
         
         let data : [String : Any] = ["isWriting" : status.isWriting,"time" : status.time]
         db.collection("Message").document(senderID).collection("Status").document(currentID).setData(data)

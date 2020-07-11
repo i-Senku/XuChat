@@ -37,7 +37,6 @@ class ChattingScene: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-
         messageText.backgroundColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
         keyboardResponder()
         setNavigationBarTitle()
@@ -49,13 +48,7 @@ class ChattingScene: UIViewController {
         animationKeyboard()
         messageVM = MessageVM(senderID: userID!)
         readAllMessage()
-        messageVM.writingStatusListener { (status) in
-            if status {
-                self.subTitle.text = "Yazıyor..."
-            }else{
-                self.subTitle.text = "Çevrimiçi"
-            }
-        }
+        userStatusListener()
 
     }
     
@@ -99,8 +92,8 @@ extension ChattingScene{
             titleLabel.font = .boldSystemFont(ofSize: 17)
             
             subTitle.text = "Status"
-            subTitle.font = .systemFont(ofSize: 13)
-            subTitle.textColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+            subTitle.font = .systemFont(ofSize: 13, weight: .semibold)
+            subTitle.textColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
                         
             
             titleLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -203,11 +196,52 @@ extension ChattingScene : UITextViewDelegate {
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        messageVM.writingStatus(status: UserStatus(isWriting: true, time: Timestamp(date: Date())))
+        messageVM.setWritingStatus(status: WritingUserStatus(isWriting: true, time: Timestamp(date: Date())))
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
-        messageVM.writingStatus(status: UserStatus(isWriting: false, time: Timestamp(date: Date())))
+        messageVM.setWritingStatus(status: WritingUserStatus(isWriting: false, time: Timestamp(date: Date())))
     }
     
+}
+
+extension ChattingScene {
+    
+    fileprivate func userStatusListener(){
+        guard let id = userID else {
+            return
+        }
+        
+        FireStoreHelper.shared.userStatusListener(userID: id) { (status) in
+            
+            if status.permission {
+                
+                if status.isOnline {
+                    
+                    self.messageVM.writingStatusListener { (status) in
+                        if status {
+                            self.subTitle.text = "Yazıyor..."
+                        }else{
+                            self.subTitle.text = "Çevrimiçi"
+                        }
+                    }
+                    
+                }else{
+                    let calendar = Calendar.current
+                    let time = calendar.dateComponents([.hour,.minute], from: status.time.dateValue())
+                    
+                    if let hour = time.hour, let minute = time.minute {
+                        self.subTitle.text = "Son Görülme : \(String(describing: hour)):\(String(describing: minute))"
+                    }
+                    
+                    
+                }
+            }else{
+                self.subTitle.text = ""
+            }
+            
+            
+            
+        }
+    }
 }

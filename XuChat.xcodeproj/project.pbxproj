@@ -10,6 +10,8 @@
 		71F30E36A2ADDC1C094AAE00 /* Pods_XuChat_XuChatUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AC54C4C576F6078DA019DA4 /* Pods_XuChat_XuChatUITests.framework */; };
 		8599BDA3029D92DBAAABF531 /* Pods_XuChatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06FC1DBAF90CF69FCF59D092 /* Pods_XuChatTests.framework */; };
 		C0409E6D891B61820705F15C /* Pods_XuChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FC8130D8791DD033E34008A /* Pods_XuChat.framework */; };
+		FE4E3A8824BA25AF00D7C8DB /* UserStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4E3A8724BA25AF00D7C8DB /* UserStatus.swift */; };
+		FE4E3A8B24BA2ECF00D7C8DB /* FireStoreHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4E3A8A24BA2ECF00D7C8DB /* FireStoreHelper.swift */; };
 		FE5E780824ABFC20007BDD50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5E780724ABFC20007BDD50 /* AppDelegate.swift */; };
 		FE5E780A24ABFC20007BDD50 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5E780924ABFC20007BDD50 /* SceneDelegate.swift */; };
 		FE5E780C24ABFC20007BDD50 /* SignInScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5E780B24ABFC20007BDD50 /* SignInScene.swift */; };
@@ -65,6 +67,8 @@
 		7FC8130D8791DD033E34008A /* Pods_XuChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XuChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B50C272BFA91BDD2A9770EF3 /* Pods-XuChatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XuChatTests.debug.xcconfig"; path = "Target Support Files/Pods-XuChatTests/Pods-XuChatTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EDBCDE89013D95BF110406B5 /* Pods-XuChatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XuChatTests.release.xcconfig"; path = "Target Support Files/Pods-XuChatTests/Pods-XuChatTests.release.xcconfig"; sourceTree = "<group>"; };
+		FE4E3A8724BA25AF00D7C8DB /* UserStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatus.swift; sourceTree = "<group>"; };
+		FE4E3A8A24BA2ECF00D7C8DB /* FireStoreHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireStoreHelper.swift; sourceTree = "<group>"; };
 		FE5E780424ABFC20007BDD50 /* XuChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XuChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE5E780724ABFC20007BDD50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE5E780924ABFC20007BDD50 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -151,6 +155,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FE4E3A8924BA2EC100D7C8DB /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				FE4E3A8A24BA2ECF00D7C8DB /* FireStoreHelper.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		FE5E77FB24ABFC20007BDD50 = {
 			isa = PBXGroup;
 			children = (
@@ -225,6 +237,7 @@
 		FE85EDB924AE5DA900841BA9 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				FE4E3A8924BA2EC100D7C8DB /* Helper */,
 				FED74D5324B466B800D1BCE5 /* Extension */,
 				FE85EDC524AFECF700841BA9 /* Constant */,
 			);
@@ -245,6 +258,7 @@
 				FE85EDB224AC97CC00841BA9 /* User.swift */,
 				FEAFC68024B1231000AF6A73 /* Message.swift */,
 				FEE7F32C24B8F3E2007AB223 /* WritingUser.swift */,
+				FE4E3A8724BA25AF00D7C8DB /* UserStatus.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -535,6 +549,7 @@
 				FE85EDBD24AE773800841BA9 /* ShuffleUserVM.swift in Sources */,
 				FED74D5524B466D300D1BCE5 /* NotificationCenter.swift in Sources */,
 				FE5E780C24ABFC20007BDD50 /* SignInScene.swift in Sources */,
+				FE4E3A8824BA25AF00D7C8DB /* UserStatus.swift in Sources */,
 				FE85EDB124AC8A7C00841BA9 /* SignUpScene.swift in Sources */,
 				FE5E780824ABFC20007BDD50 /* AppDelegate.swift in Sources */,
 				FE85EDB624AE5B5600841BA9 /* UsersCell.swift in Sources */,
@@ -546,6 +561,7 @@
 				FEE7F32D24B8F3E2007AB223 /* WritingUser.swift in Sources */,
 				FEAFC68124B1231000AF6A73 /* Message.swift in Sources */,
 				FE85EDB324AC97CC00841BA9 /* User.swift in Sources */,
+				FE4E3A8B24BA2ECF00D7C8DB /* FireStoreHelper.swift in Sources */,
 				FE85EDB824AE5B8500841BA9 /* MessageScene.swift in Sources */,
 				FEAFC68324B1240100AF6A73 /* MessageVM.swift in Sources */,
 			);
