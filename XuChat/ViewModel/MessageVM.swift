@@ -30,7 +30,6 @@ class MessageVM{
             }
             
             guard let snapshot = snapshot else {return}
-            print(snapshot.documents)
             snapshot.documentChanges.forEach { (document) in
                 if document.type == .added {
                     self.messageList.append(Message(message: document.document.data()))
@@ -99,10 +98,29 @@ class MessageVM{
         
         let data : [String : Any] = ["isWriting" : status.isWriting,"time" : status.time]
         db.collection("Message").document(senderID).collection("Status").document(currentID).setData(data)
-        
     }
     
-    func getWritingStatus(){
-        
+    func writingStatusListener(completionHandler : @escaping (Bool) -> ()){
+        db.collection("Message").document(currentID).collection("Status").document(senderID).addSnapshotListener { (snapshot, error) in
+            
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            
+            guard let snapshot = snapshot else {return}
+            
+            if let status = snapshot.data()?["isWriting"] as? Bool {
+                
+                if status {
+                    completionHandler(true)
+                }else{
+                    completionHandler(false)
+                }
+            }else{
+                completionHandler(false)
+            }
+            
+        }
     }
 }

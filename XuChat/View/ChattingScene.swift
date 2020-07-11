@@ -19,7 +19,9 @@ class ChattingScene: UIViewController {
     
     let titleLabel = UILabel()
     let subTitle = UILabel()
+    
     var messageVM : MessageVM!
+    
     var userID : String?
     var paginationCounter = 3
         
@@ -29,8 +31,6 @@ class ChattingScene: UIViewController {
         messageText.backgroundColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
         keyboardResponder()
         setNavigationBarTitle()
-        
-        //messageVM.writingStatus(status: UserStatus(isOnline: true, isWriting: true , time: Timestamp(date: Date())), senderID: userID!)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,6 +38,14 @@ class ChattingScene: UIViewController {
         tabBarController?.tabBar.isHidden = true
         messageVM = MessageVM(senderID: userID!)
         readAllMessage()
+        messageVM.writingStatusListener { (status) in
+            if status {
+                self.subTitle.text = "Yazıyor..."
+            }else{
+                self.subTitle.text = ""
+            }
+        }
+
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -102,7 +110,6 @@ extension ChattingScene{
     fileprivate func readAllMessage(){
         view.backgroundColor = UIColor(white: 0.95, alpha: 1)
             messageVM.readMessage(){
-                print(self.messageVM.messageList)
                 self.chattingTableView.reloadData()
                 if self.messageVM.messageList.count != 0 {
                     let indexPath = IndexPath(row: self.messageVM.messageList.count-1, section: 0)
@@ -175,10 +182,11 @@ extension ChattingScene : UITextViewDelegate {
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        print("Başladı")
+        messageVM.writingStatus(status: UserStatus(isWriting: true, time: Timestamp(date: Date())))
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
-        print("Bitti")
+        messageVM.writingStatus(status: UserStatus(isWriting: false, time: Timestamp(date: Date())))
     }
+    
 }

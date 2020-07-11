@@ -533,7 +533,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RvP-Wb-cBT">
-                                <rect key="frame" x="0.0" y="88" width="414" height="676"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="672"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="chattingCell" rowHeight="117" id="STK-KP-05K" customClass="ChattingCell" customModule="XuChat" customModuleProvider="target">
@@ -544,10 +544,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U4G-ef-nv7">
-                                                    <rect key="frame" x="20" y="11" width="290" height="95"/>
+                                                    <rect key="frame" x="20" y="4" width="290" height="109"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ercan" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KPt-5V-TO2">
-                                                            <rect key="frame" x="8" y="8" width="274" height="79"/>
+                                                            <rect key="frame" x="8" y="8" width="274" height="93"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -564,9 +564,9 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="U4G-ef-nv7" firstAttribute="width" relation="lessThanOrEqual" secondItem="SSt-eO-wZa" secondAttribute="width" multiplier="0.7" id="8e8-ey-fQF"/>
-                                                <constraint firstItem="U4G-ef-nv7" firstAttribute="top" secondItem="SSt-eO-wZa" secondAttribute="topMargin" id="O3D-JC-4r0"/>
+                                                <constraint firstItem="U4G-ef-nv7" firstAttribute="top" secondItem="SSt-eO-wZa" secondAttribute="top" constant="4" id="QFb-Hs-muJ"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="U4G-ef-nv7" secondAttribute="trailing" placeholder="YES" id="Vwv-wp-14L"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="U4G-ef-nv7" secondAttribute="bottom" id="meW-ig-LIL"/>
+                                                <constraint firstAttribute="bottom" secondItem="U4G-ef-nv7" secondAttribute="bottom" constant="4" id="gTg-YK-Llf"/>
                                                 <constraint firstItem="U4G-ef-nv7" firstAttribute="leading" secondItem="SSt-eO-wZa" secondAttribute="leadingMargin" placeholder="YES" id="ozA-Mo-bRa"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -627,7 +627,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="zBq-9F-pyd" firstAttribute="top" secondItem="RvP-Wb-cBT" secondAttribute="bottom" id="Mwv-mH-V0p"/>
+                            <constraint firstItem="zBq-9F-pyd" firstAttribute="top" secondItem="RvP-Wb-cBT" secondAttribute="bottom" constant="4" id="Mwv-mH-V0p"/>
                             <constraint firstItem="RvP-Wb-cBT" firstAttribute="top" secondItem="lcm-A8-6cp" secondAttribute="top" id="Rpg-nV-6Ts"/>
                             <constraint firstItem="RvP-Wb-cBT" firstAttribute="leading" secondItem="lcm-A8-6cp" secondAttribute="leading" id="WQu-LG-h1q"/>
                             <constraint firstAttribute="bottomMargin" secondItem="zBq-9F-pyd" secondAttribute="bottom" id="ehf-E2-kJb"/>
