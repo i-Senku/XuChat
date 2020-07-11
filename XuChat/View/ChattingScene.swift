@@ -8,41 +8,52 @@
 
 import UIKit
 import FirebaseFirestore
+import Kingfisher
 
 class ChattingScene: UIViewController {
 
     @IBOutlet weak var chattingTableView: UITableView!
     @IBOutlet weak var messageText: UITextView!
     @IBOutlet weak var textViewHeight: NSLayoutConstraint!
-    
     @IBOutlet weak var container: UIView!
     
     let titleLabel = UILabel()
     let subTitle = UILabel()
+    var navigationBarImage : UIImageView = {
+        let view = UIImageView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.contentMode = .scaleAspectFill
+        view.clipsToBounds = true
+        view.layer.cornerRadius = 20
+        return view
+    }()
     
     var messageVM : MessageVM!
     
     var userID : String?
+    var userName : String?
+    var resource : ImageResource?
     var paginationCounter = 3
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         messageText.backgroundColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
         keyboardResponder()
         setNavigationBarTitle()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        animationKeyboard()
         tabBarController?.tabBar.isHidden = true
+        navigationBarImage.kf.setImage(with: resource)
+        animationKeyboard()
         messageVM = MessageVM(senderID: userID!)
         readAllMessage()
         messageVM.writingStatusListener { (status) in
             if status {
                 self.subTitle.text = "Yazıyor..."
             }else{
-                self.subTitle.text = ""
+                self.subTitle.text = "Çevrimiçi"
             }
         }
 
@@ -52,6 +63,7 @@ class ChattingScene: UIViewController {
         tabBarController?.tabBar.isHidden = false
         titleLabel.removeFromSuperview()
         subTitle.removeFromSuperview()
+        navigationBarImage.removeFromSuperview()
     }
     
     
@@ -83,25 +95,34 @@ extension ChattingScene{
         
         if let navigationBar = navigationController?.navigationBar {
         
-            titleLabel.text = "Ercan"
+            titleLabel.text = userName!
             titleLabel.font = .boldSystemFont(ofSize: 17)
             
             subTitle.text = "Status"
             subTitle.font = .systemFont(ofSize: 13)
             subTitle.textColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
-            
+                        
             
             titleLabel.translatesAutoresizingMaskIntoConstraints = false
             subTitle.translatesAutoresizingMaskIntoConstraints = false
             
+            navigationBar.addSubview(navigationBarImage)
             navigationBar.addSubview(subTitle)
             navigationBar.addSubview(titleLabel)
             
-            titleLabel.topAnchor.constraint(equalTo: navigationBar.topAnchor).isActive = true
-            titleLabel.centerXAnchor.constraint(equalTo: navigationBar.centerXAnchor).isActive = true
+            navigationBarImage.leadingAnchor.constraint(equalTo: navigationBar.leadingAnchor,constant: 50).isActive = true
+            navigationBarImage.centerYAnchor.constraint(equalTo: navigationBar.centerYAnchor).isActive = true
+            navigationBarImage.heightAnchor.constraint(equalToConstant: 40).isActive = true
+            navigationBarImage.widthAnchor.constraint(equalToConstant: 40).isActive = true
             
-            subTitle.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,constant: 4).isActive = true
-            subTitle.centerXAnchor.constraint(equalTo: navigationBar.centerXAnchor).isActive = true
+            
+            titleLabel.topAnchor.constraint(equalTo: navigationBarImage.topAnchor).isActive = true
+            titleLabel.leadingAnchor.constraint(equalTo: navigationBarImage.trailingAnchor,constant: 8).isActive = true
+            
+            
+            
+            subTitle.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,constant: 0).isActive = true
+            subTitle.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor).isActive = true
         
         }
         

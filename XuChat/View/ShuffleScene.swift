@@ -22,6 +22,10 @@ class ShuffleUserScene: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backBarButtonItem
+        
         setProgressHUD()
         shuffleVM.getUser {
             self.hud.dismiss(animated: true)
@@ -36,8 +40,10 @@ class ShuffleUserScene: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! ChattingScene
-        let id = sender as! String
-        vc.userID = id
+        let userData = sender as! [String : Any]
+        vc.userID = userData["userID"] as! String
+        vc.userName = userData["userName"] as! String
+        vc.resource = userData["resource"] as! ImageResource
     }
     
     @IBAction func exit(_ sender: Any) {
@@ -76,7 +82,12 @@ extension ShuffleUserScene : UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let list = shuffleVM.userList[indexPath.row]
-        performSegue(withIdentifier: Constant.segueToChattingFromShuffle, sender: list.userID)
+        let url = URL(string: list.imageURL!)!
+        let resource = ImageResource(downloadURL: url, cacheKey: list.imageURL!)
+        
+        let userData : [String:Any] =
+            ["userID" : list.userID, "userName" : list.userName!, "resource" : resource]
+        performSegue(withIdentifier: Constant.segueToChattingFromShuffle, sender: userData)
     }
     
     
