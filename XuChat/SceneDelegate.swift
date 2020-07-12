@@ -29,7 +29,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }else{
             window?.rootViewController = signIn
         }
-        FireStoreHelper.shared.setUserStatus(isOnline: true, permission: true, time: Timestamp(date: Date()))
+        setUserStatus(isOnline: true)
         window?.makeKeyAndVisible()
     }
 
@@ -39,7 +39,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Release any resources associated with this scene that can be re-created the next time the scene connects.
         // The scene may re-connect later, as its session was not neccessarily discarded (see `application:didDiscardSceneSessions` instead).
         
-        FireStoreHelper.shared.setUserStatus(isOnline: false, permission: true, time: Timestamp(date: Date()))
+        setUserStatus(isOnline: false)
+
         
     }
 
@@ -57,7 +58,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneWillEnterForeground(_ scene: UIScene) {
         // Called as the scene transitions from the background to the foreground.
         // Use this method to undo the changes made on entering the background.
-        FireStoreHelper.shared.setUserStatus(isOnline: true, permission: true, time: Timestamp(date: Date()))
+        setUserStatus(isOnline: true)
 
     }
 
@@ -68,9 +69,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Save changes in the application's managed object context when the application transitions to the background.
         (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
-        FireStoreHelper.shared.setUserStatus(isOnline: false, permission: true, time: Timestamp(date: Date()))
+        setUserStatus(isOnline: false)
 
         
+    }
+    
+    func setUserStatus(isOnline : Bool){
+        
+        if let _ = Auth.auth().currentUser {
+            FireStoreHelper.shared.setUserStatus(isOnline: isOnline, permission: true, time: Timestamp(date: Date()))
+        }
     }
 
 

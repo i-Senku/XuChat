@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseFirestore
 import Kingfisher
+import FirebaseAuth
 
 class ChattingScene: UIViewController {
 
@@ -32,8 +33,12 @@ class ChattingScene: UIViewController {
     
     var userID : String?
     var userName : String?
+    var myUserName : String!
+    
     var resource : ImageResource?
     var paginationCounter = 3
+    
+    var user : User?
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +49,9 @@ class ChattingScene: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         tabBarController?.tabBar.isHidden = true
+        myUserName = Auth.auth().currentUser?.displayName!
+        
+        
         navigationBarImage.kf.setImage(with: resource)
         animationKeyboard()
         messageVM = MessageVM(senderID: userID!)
@@ -64,6 +72,11 @@ class ChattingScene: UIViewController {
         guard let message = messageText.text else { return }
         
         messageVM.writeMessage(messageText: message.trimmingCharacters(in: .whitespacesAndNewlines))
+        
+        if let userID = userID, let userImage = resource?.downloadURL.absoluteString, let userName = userName, let message = messageText.text {
+            print(message)
+            messageVM.setLastMessage(userID: userID, userImage: userImage, userName: userName, lastMessage: message)
+        }
         
         messageText.text = ""
         textViewHeight.constant = messageText.contentSize.height
@@ -123,6 +136,8 @@ extension ChattingScene{
     
     fileprivate func readAllMessage(){
         view.backgroundColor = UIColor(white: 0.95, alpha: 1)
+        //let imageURL = self.resource!.downloadURL.absoluteString
+        
             messageVM.readMessage(){
                 self.chattingTableView.reloadData()
                 if self.messageVM.messageList.count != 0 {
@@ -143,6 +158,7 @@ extension ChattingScene{
         if let keyboardValue = keyboard.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue{
             
             let keyboardFrame = keyboardValue.cgRectValue
+            chattingTableView.frame.size = CGSize(width: chattingTableView.frame.size.width, height: view.safeAreaInsets.bottom - keyboardFrame.size.height)
             self.view.frame.origin.y = view.safeAreaInsets.bottom - keyboardFrame.size.height
         }
     }

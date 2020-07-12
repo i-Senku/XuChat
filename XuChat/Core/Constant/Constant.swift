@@ -7,10 +7,16 @@
 //
 
 struct Constant {
+    
+    //MARK: Cell Name
     static let userCellName = "userCell"
     static let shuffleCellName = "shuffleCell"
-    static let userCollection = "Users"
     
+    //MARK: Collection Name
+    static let userCollection = "Users"
+    static let messageCollection = "Message"
+    
+    //MARK: Segue Name
     static let segueToImage = "toImage"
     static let segueToChattingFromShuffle = "toChattingFromShuffle"
     

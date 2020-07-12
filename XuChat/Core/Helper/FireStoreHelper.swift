@@ -44,4 +44,24 @@ class FireStoreHelper{
             completionHandler(UserStatus(data: snapshot.data()))
         }
     }
+    
+    func getMyUserData(completionHandler : @escaping (User)->() ){
+        guard let ID = Auth.auth().currentUser?.uid else {return}
+        
+        db.collection(Constant.userCollection).whereField("id", isEqualTo: ID).getDocuments { (snapshot, error) in
+            
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            
+            if let snapshot = snapshot {
+                
+                snapshot.documents.forEach { (queryDocumentSnapshot) in
+                    let user = User(user: queryDocumentSnapshot.data())
+                    completionHandler(user)
+                }
+            }
+        }
+    }
 }

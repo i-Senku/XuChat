@@ -14,9 +14,11 @@ class ShuffleUserVM {
     
     let db : Firestore!
     var userList = [User]()
+    var myID = ""
     
     init() {
         db = Firestore.firestore()
+        myID = Auth.auth().currentUser!.uid
     }
     
     func getUser(completionHandler : @escaping () -> ()){

@@ -12,6 +12,8 @@
 		C0409E6D891B61820705F15C /* Pods_XuChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FC8130D8791DD033E34008A /* Pods_XuChat.framework */; };
 		FE4E3A8824BA25AF00D7C8DB /* UserStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4E3A8724BA25AF00D7C8DB /* UserStatus.swift */; };
 		FE4E3A8B24BA2ECF00D7C8DB /* FireStoreHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4E3A8A24BA2ECF00D7C8DB /* FireStoreHelper.swift */; };
+		FE4E3A8D24BA657F00D7C8DB /* MessagesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4E3A8C24BA657F00D7C8DB /* MessagesVM.swift */; };
+		FE4E3A8F24BA667500D7C8DB /* MessageUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4E3A8E24BA667500D7C8DB /* MessageUser.swift */; };
 		FE5E780824ABFC20007BDD50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5E780724ABFC20007BDD50 /* AppDelegate.swift */; };
 		FE5E780A24ABFC20007BDD50 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5E780924ABFC20007BDD50 /* SceneDelegate.swift */; };
 		FE5E780C24ABFC20007BDD50 /* SignInScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5E780B24ABFC20007BDD50 /* SignInScene.swift */; };
@@ -69,6 +71,8 @@
 		EDBCDE89013D95BF110406B5 /* Pods-XuChatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XuChatTests.release.xcconfig"; path = "Target Support Files/Pods-XuChatTests/Pods-XuChatTests.release.xcconfig"; sourceTree = "<group>"; };
 		FE4E3A8724BA25AF00D7C8DB /* UserStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatus.swift; sourceTree = "<group>"; };
 		FE4E3A8A24BA2ECF00D7C8DB /* FireStoreHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireStoreHelper.swift; sourceTree = "<group>"; };
+		FE4E3A8C24BA657F00D7C8DB /* MessagesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesVM.swift; sourceTree = "<group>"; };
+		FE4E3A8E24BA667500D7C8DB /* MessageUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageUser.swift; sourceTree = "<group>"; };
 		FE5E780424ABFC20007BDD50 /* XuChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XuChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE5E780724ABFC20007BDD50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE5E780924ABFC20007BDD50 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -259,6 +263,7 @@
 				FEAFC68024B1231000AF6A73 /* Message.swift */,
 				FEE7F32C24B8F3E2007AB223 /* WritingUser.swift */,
 				FE4E3A8724BA25AF00D7C8DB /* UserStatus.swift */,
+				FE4E3A8E24BA667500D7C8DB /* MessageUser.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -282,6 +287,7 @@
 			children = (
 				FE85EDBC24AE773800841BA9 /* ShuffleUserVM.swift */,
 				FEAFC68224B1240100AF6A73 /* MessageVM.swift */,
+				FE4E3A8C24BA657F00D7C8DB /* MessagesVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -542,6 +548,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE4E3A8F24BA667500D7C8DB /* MessageUser.swift in Sources */,
 				FEAFC68524B134D000AF6A73 /* MainTabBar.swift in Sources */,
 				FE5E781224ABFC20007BDD50 /* XuChat.xcdatamodeld in Sources */,
 				FE85EDBF24AFBB7E00841BA9 /* ShuffleCell.swift in Sources */,
@@ -555,6 +562,7 @@
 				FE85EDB624AE5B5600841BA9 /* UsersCell.swift in Sources */,
 				FE5E780A24ABFC20007BDD50 /* SceneDelegate.swift in Sources */,
 				FE85EDC124AFCE7A00841BA9 /* SelectImageScene.swift in Sources */,
+				FE4E3A8D24BA657F00D7C8DB /* MessagesVM.swift in Sources */,
 				FEAFC67F24B0FD6D00AF6A73 /* ChattingCell.swift in Sources */,
 				FE8E059824AC820100367E5D /* ShuffleScene.swift in Sources */,
 				FE85EDBB24AE5DBF00841BA9 /* Constant.swift in Sources */,

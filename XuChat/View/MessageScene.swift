@@ -8,18 +8,24 @@
 
 import UIKit
 import JGProgressHUD
+import FirebaseFirestore
+import Kingfisher
 
 class MessageScene: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    let userVM = ShuffleUserVM()
+    let lastMessage = MessagesVM()
+    
     let hud = JGProgressHUD(style: .dark)
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = 85
+        
+        
         showProgress()
-        userVM.getUser {
+        
+        lastMessage.getLastMessages {
             self.hud.dismiss(animated: true)
             self.tableView.reloadData()
         }
@@ -28,18 +34,32 @@ class MessageScene: UIViewController {
     fileprivate func showProgress(){
         hud.textLabel.text = "Loading"
         hud.show(in: view)
+        
     }
 }
 
 extension MessageScene : UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return userVM.userList.count
+        return lastMessage.lastMessageList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constant.userCellName, for: indexPath) as! UsersCell
-        cell.userName.text = userVM.userList[indexPath.row].userName
+        
+        let data = lastMessage.lastMessageList[indexPath.row]
+        
+        let calendar = Calendar.current
+        let time = calendar.dateComponents([.hour,.minute], from: data.time.dateValue())
+        
+        cell.userName.text = data.userName
+        cell.time.text = "\(time.hour!):\(time.minute!)"
+        cell.lastMessage.text = data.lastMessage
+        
+        let resource = ImageResource(downloadURL: URL(string: data.userImage)!, cacheKey: data.userImage)
+        
+        cell.profileImage.kf.setImage(with: resource)
+        
         return cell
     }
     

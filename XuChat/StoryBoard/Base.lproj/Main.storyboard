@@ -421,6 +421,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="lastMessage" destination="ksF-kY-FTw" id="Tb1-R1-yDz"/>
                                             <outlet property="profileImage" destination="EUO-Jr-UMT" id="utb-rF-U6z"/>
                                             <outlet property="time" destination="UAn-v2-uXO" id="wLq-oi-IwB"/>
                                             <outlet property="userName" destination="PDg-Yc-Wup" id="g6J-JM-TDW"/>
@@ -670,7 +671,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="1ae-yg-3qS"/>
+        <segue reference="MnK-ok-WbR"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="ercan" width="640" height="640"/>

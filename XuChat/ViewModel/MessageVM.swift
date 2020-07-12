@@ -123,4 +123,31 @@ class MessageVM{
             
         }
     }
+    
+    func setLastMessage(userID : String, userImage : String, userName : String, lastMessage : String){
+           
+        let dataForMe : [String : Any] =
+            [
+                "lastMessage" : lastMessage,
+                "time" : Timestamp(date: Date()),
+                "userID" : userID,
+                "userImage" : userImage,
+                "userName" : userName
+        ]
+        
+        db.collection(Constant.messageCollection).document(currentID).collection("LastMessage").document(senderID).setData(dataForMe)
+
+        FireStoreHelper.shared.getMyUserData { (user) in
+            let dataForUser : [String : Any] = [
+                "lastMessage" : lastMessage,
+                "time" : Timestamp(date: Date()),
+                "userID" : user.userID,
+                "userImage" : user.imageURL!,
+                "userName" : user.userName!
+            ]
+            
+            self.db.collection(Constant.messageCollection).document(self.senderID).collection("LastMessage").document(self.currentID).setData(dataForUser)
+        }
+
+    }
 }
