@@ -9,7 +9,7 @@
 import FirebaseFirestore
 import FirebaseAuth
 
-class MessageVM{
+class ChattingVM{
     var messageList = [Message]()
     let db : Firestore!
     let currentID : String!
@@ -21,6 +21,7 @@ class MessageVM{
         self.senderID = senderID
     }
     
+    //MARK:- Read Message in Chatting
     func readMessage(completionHandler : @escaping ()->()){
         
         db.collection("Message").document(currentID).collection(senderID).order(by: "time").limit(toLast: 20).addSnapshotListener { (snapshot, error) in
@@ -38,7 +39,7 @@ class MessageVM{
             completionHandler()
         }
     }
-    
+    //MARK:- Write new message for current user and other user.
     func writeMessage(messageText:String){
         
         let myData : [String:Any] = [
@@ -75,7 +76,7 @@ class MessageVM{
         }
         
     }
-    
+    //MARK:- Load more message when user scroll tableview
     func loadMore(count : Int, completionHandler : @escaping ()->() ){
         
         db.collection("Message").document(currentID).collection(senderID).order(by: "time").limit(toLast: count+10).getDocuments { (snapshot, error) in

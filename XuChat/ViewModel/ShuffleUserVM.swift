@@ -14,11 +14,10 @@ class ShuffleUserVM {
     
     let db : Firestore!
     var userList = [User]()
-    var myID = ""
+
     
     init() {
         db = Firestore.firestore()
-        myID = Auth.auth().currentUser!.uid
     }
     
     func getUser(completionHandler : @escaping () -> ()){
@@ -28,15 +27,18 @@ class ShuffleUserVM {
                 print(error)
                 return
             }
-            let myID = Auth.auth().currentUser?.uid
-            for document in snapshot!.documents {
-                
-                if myID! == document.data()["id"] as! String{
-                    continue
+            if let myID = Auth.auth().currentUser?.uid{
+                for document in snapshot!.documents {
+                    
+                    if myID == document.data()["id"] as! String{
+                        continue
+                    }
+                    self.userList.append(User(user: document.data()))
                 }
-                self.userList.append(User(user: document.data()))
+                completionHandler()
+            }else{
+                return
             }
-            completionHandler()
         }
     }
 }

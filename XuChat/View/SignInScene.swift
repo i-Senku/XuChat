@@ -16,7 +16,6 @@ class SignInScene: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //isLogin()
     }
 
 
@@ -30,12 +29,7 @@ class SignInScene: UIViewController {
                 self.showAlert(message: error.localizedDescription)
                 return
             }
-            let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
-            let messageScene = storyBoard.instantiateViewController(withIdentifier: "messageScene") as! MessageScene
-            
-            self.present(messageScene, animated: true, completion: nil)
-
-            
+            self.performSegue(withIdentifier: Constant.toTabbar, sender: nil)
         }
     }
     
@@ -46,16 +40,6 @@ class SignInScene: UIViewController {
         }
         alert.addAction(okayAction)
         present(alert, animated: true, completion: nil)
-    }
-    
-    fileprivate func isLogin() {
-        if let _ = Auth.auth().currentUser {
-            DispatchQueue.main.asyncAfter(deadline: .now()) {
-                
-                let vc = self.storyboard?.instantiateViewController(withIdentifier: "messageScene") as! MessageScene
-                self.present(vc, animated: true, completion: nil)
-            }
-        }
     }
 }
 

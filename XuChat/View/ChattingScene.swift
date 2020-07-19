@@ -20,6 +20,7 @@ class ChattingScene: UIViewController {
     
     let titleLabel = UILabel()
     let subTitle = UILabel()
+    
     var navigationBarImage : UIImageView = {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -29,7 +30,7 @@ class ChattingScene: UIViewController {
         return view
     }()
     
-    var messageVM : MessageVM!
+    var messageVM : ChattingVM!
     
     var userID : String?
     var userName : String?
@@ -38,7 +39,7 @@ class ChattingScene: UIViewController {
     var resource : ImageResource?
     var paginationCounter = 3
     
-    var user : User?
+    //var user : User?
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,11 +51,9 @@ class ChattingScene: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         tabBarController?.tabBar.isHidden = true
         myUserName = Auth.auth().currentUser?.displayName!
-        
-        
         navigationBarImage.kf.setImage(with: resource)
         animationKeyboard()
-        messageVM = MessageVM(senderID: userID!)
+        messageVM = ChattingVM(senderID: userID!)
         readAllMessage()
         userStatusListener()
 
@@ -249,15 +248,10 @@ extension ChattingScene {
                     if let hour = time.hour, let minute = time.minute {
                         self.subTitle.text = "Son Görülme : \(String(describing: hour)):\(String(describing: minute))"
                     }
-                    
-                    
                 }
             }else{
                 self.subTitle.text = ""
             }
-            
-            
-            
         }
     }
 }

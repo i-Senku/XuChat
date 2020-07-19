@@ -15,21 +15,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        
+                
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         
-        
         let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
-        let tabBarVC = storyBoard.instantiateViewController(withIdentifier: "mainTabBar") as! MainTabBar
-        let signIn = storyBoard.instantiateViewController(withIdentifier: "signIn") as! SignInScene
 
-        if Auth.auth().currentUser != nil {
+        
+        if let _ = Auth.auth().currentUser {
+            
+            let tabBarVC = storyBoard.instantiateViewController(withIdentifier: "mainTabBar") as! MainTabBar
             window?.rootViewController = tabBarVC
+            
         }else{
+
+            let signIn = storyBoard.instantiateViewController(withIdentifier: "navigationSignIn") as! NavigationSignIn
             window?.rootViewController = signIn
         }
-        setUserStatus(isOnline: true)
+        
         window?.makeKeyAndVisible()
     }
 

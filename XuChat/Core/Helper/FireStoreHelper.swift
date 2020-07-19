@@ -17,6 +17,7 @@ class FireStoreHelper{
     let currentID = Auth.auth().currentUser?.uid
     let db = Firestore.firestore()
     
+    //MARK:- Set Status For User ( Online or Offline )
     func setUserStatus(isOnline : Bool, permission : Bool, time : Timestamp){
         let data : [String : Any] = [
             "isOnline" : isOnline,
@@ -32,6 +33,7 @@ class FireStoreHelper{
         }
     }
     
+    //MARK:- Listen User Status ( Online or Offline )
     func userStatusListener(userID : String,completionHandler : @escaping (UserStatus)->()){
         db.collection("UserStatus").document(userID).addSnapshotListener { (snapshot, error) in
             if let error = error {
@@ -45,6 +47,7 @@ class FireStoreHelper{
         }
     }
     
+    //MARK:- Get Current User Data For Last Message Scene
     func getMyUserData(completionHandler : @escaping (User)->() ){
         guard let ID = Auth.auth().currentUser?.uid else {return}
         

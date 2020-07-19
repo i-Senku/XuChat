@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hiL-B3-W7K">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -92,22 +92,23 @@
                     <connections>
                         <outlet property="email" destination="ED9-RH-aE7" id="sVD-Eh-oNo"/>
                         <outlet property="password" destination="eHR-CH-tRN" id="VBl-1r-41L"/>
+                        <segue destination="cbN-Zg-NZd" kind="show" identifier="toTabbar" id="Y0s-MD-eVN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-472" y="-417"/>
+            <point key="canvasLocation" x="437.68115942028987" y="-417.1875"/>
         </scene>
         <!--Sign Up Scene-->
         <scene sceneID="1hQ-Z3-3ru">
             <objects>
-                <viewController id="UyG-es-5r2" customClass="SignUpScene" customModule="XuChat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="UyG-es-5r2" customClass="SignUpScene" customModule="XuChat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nsR-U0-ZTS">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="tKs-zI-92q">
-                                <rect key="frame" x="20" y="360" width="374" height="122"/>
+                                <rect key="frame" x="20" y="387" width="374" height="122"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nick Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZsU-Tg-qNx">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
@@ -127,7 +128,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D7r-7Z-un0">
-                                <rect key="frame" x="20" y="502" width="374" height="40"/>
+                                <rect key="frame" x="20" y="529" width="374" height="40"/>
                                 <color key="backgroundColor" red="0.39992469549999998" green="0.6895672679" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="g61-rz-Fsk"/>
@@ -145,7 +146,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="signup" translatesAutoresizingMaskIntoConstraints="NO" id="iTA-NC-vfq">
-                                <rect key="frame" x="20" y="20" width="374" height="320"/>
+                                <rect key="frame" x="20" y="64" width="374" height="303"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -173,21 +174,21 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DqN-lO-mjf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="359" y="-417"/>
+            <point key="canvasLocation" x="1268.1159420289855" y="-417.1875"/>
         </scene>
         <!--Select Image Scene-->
         <scene sceneID="rb9-rr-mvf">
             <objects>
-                <viewController storyboardIdentifier="selectedImageScene" id="y7s-BS-DCt" customClass="SelectImageScene" customModule="XuChat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="selectedImageScene" modalPresentationStyle="fullScreen" id="y7s-BS-DCt" customClass="SelectImageScene" customModule="XuChat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tbu-gb-e8t">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="upload" translatesAutoresizingMaskIntoConstraints="NO" id="7pp-WV-v5S">
-                                <rect key="frame" x="41.5" y="131.5" width="331" height="242.5"/>
+                                <rect key="frame" x="41.5" y="146" width="331" height="245.5"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fb9-f6-Ndq">
-                                <rect key="frame" x="20" y="485" width="374" height="40"/>
+                                <rect key="frame" x="20" y="517.5" width="374" height="40"/>
                                 <color key="backgroundColor" red="0.39992469549999998" green="0.6895672679" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Gtw-ej-IBa"/>
@@ -220,12 +221,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2rc-Mx-jXl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1128" y="-417"/>
+            <point key="canvasLocation" x="2037.68115942029" y="-417.1875"/>
         </scene>
         <!--Shuffle-->
         <scene sceneID="f7v-yO-8S6">
             <objects>
-                <viewController storyboardIdentifier="messageScene" id="Gy6-Wi-Bz8" customClass="ShuffleUserScene" customModule="XuChat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="messageScene" modalPresentationStyle="fullScreen" id="Gy6-Wi-Bz8" customClass="ShuffleUserScene" customModule="XuChat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vHV-Ua-3LQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -330,7 +331,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UVV-Vw-Fir"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Shuffle" id="Baj-oU-JX7">
+                    <navigationItem key="navigationItem" title="Shuffle" largeTitleDisplayMode="always" id="Baj-oU-JX7">
+                        <barButtonItem key="backBarButtonItem" title=" " id="alm-aw-ZjT"/>
                         <barButtonItem key="rightBarButtonItem" image="shuffle" catalog="system" id="2kx-eV-Xfx">
                             <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
@@ -341,7 +343,6 @@
                     <connections>
                         <outlet property="tableView" destination="Kp2-eP-Ruk" id="hCZ-9q-pst"/>
                         <segue destination="YAb-P5-iaz" kind="show" identifier="toChattingFromShuffle" id="1ae-yg-3qS"/>
-                        <segue destination="BYZ-38-t0r" kind="show" id="XQB-QI-jY5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JOI-Y5-nWA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -484,7 +485,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tnM-aQ-GMq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1342" y="-735"/>
+            <point key="canvasLocation" x="-1878" y="-758"/>
         </scene>
         <!--TabBar-->
         <scene sceneID="ITT-sa-3TK">
@@ -669,9 +670,27 @@
             </objects>
             <point key="canvasLocation" x="328.98550724637681" y="-1113.6160714285713"/>
         </scene>
+        <!--Navigation Sign In-->
+        <scene sceneID="EPm-0w-ced">
+            <objects>
+                <navigationController storyboardIdentifier="navigationSignIn" automaticallyAdjustsScrollViewInsets="NO" id="hiL-B3-W7K" customClass="NavigationSignIn" customModule="XuChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="gEw-Fa-icu">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="8zy-Kf-ULu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mVb-JX-TXc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-472.46376811594206" y="-417.1875"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="MnK-ok-WbR"/>
+        <segue reference="1ae-yg-3qS"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="ercan" width="640" height="640"/>

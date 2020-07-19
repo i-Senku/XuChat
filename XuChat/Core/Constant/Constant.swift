@@ -19,5 +19,6 @@ struct Constant {
     //MARK: Segue Name
     static let segueToImage = "toImage"
     static let segueToChattingFromShuffle = "toChattingFromShuffle"
+    static let toTabbar = "toTabbar"
     
 }

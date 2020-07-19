@@ -23,6 +23,8 @@ class ShuffleUserScene: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.hidesBackButton = true
+        
         let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationItem.backBarButtonItem = backBarButtonItem
         
@@ -50,7 +52,6 @@ class ShuffleUserScene: UIViewController {
         do {
             try Auth.auth().signOut()
             self.dismiss(animated: true, completion: nil)
-            print("Tıklandı")
         } catch let e {
             print(e.localizedDescription)
         }
