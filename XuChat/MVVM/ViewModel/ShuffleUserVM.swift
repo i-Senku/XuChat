@@ -19,7 +19,7 @@ class ShuffleUserVM {
     init() {
         db = Firestore.firestore()
     }
-    
+    //MARK:- Get all user for Shuffle Scene
     func getUser(completionHandler : @escaping () -> ()){
         let userCollection = db.collection(Constant.userCollection)
         userCollection.getDocuments { (snapshot, error) in

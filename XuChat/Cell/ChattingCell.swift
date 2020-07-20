@@ -21,6 +21,7 @@ class ChattingCell: UITableViewCell {
         containerTrailing.isActive = false
     }
     
+    
     var isMe : Bool? {
         didSet{
             if let isMe = isMe {

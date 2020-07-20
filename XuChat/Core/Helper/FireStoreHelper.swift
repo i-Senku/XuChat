@@ -47,7 +47,7 @@ class FireStoreHelper{
         }
     }
     
-    //MARK:- Get Current User Data For Last Message Scene
+    //MARK:- Get Data of Current User For Last Message Scene
     func getMyUserData(completionHandler : @escaping (User)->() ){
         guard let ID = Auth.auth().currentUser?.uid else {return}
         

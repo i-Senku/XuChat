@@ -39,6 +39,7 @@ class ChattingVM{
             completionHandler()
         }
     }
+    
     //MARK:- Write new message for current user and other user.
     func writeMessage(messageText:String){
         
@@ -76,6 +77,7 @@ class ChattingVM{
         }
         
     }
+    
     //MARK:- Load more message when user scroll tableview
     func loadMore(count : Int, completionHandler : @escaping ()->() ){
         
@@ -95,12 +97,14 @@ class ChattingVM{
         }
     }
     
+    //MARK:- Set status for writing or unwriting
     func setWritingStatus(status: WritingUserStatus){
         
         let data : [String : Any] = ["isWriting" : status.isWriting,"time" : status.time]
         db.collection("Message").document(senderID).collection("Status").document(currentID).setData(data)
     }
     
+    //MARK:- Listen status for writing
     func writingStatusListener(completionHandler : @escaping (Bool) -> ()){
         db.collection("Message").document(currentID).collection("Status").document(senderID).addSnapshotListener { (snapshot, error) in
             
@@ -125,6 +129,7 @@ class ChattingVM{
         }
     }
     
+    //MARK:- Save Last Message For Current User and Other User
     func setLastMessage(userID : String, userImage : String, userName : String, lastMessage : String){
            
         let dataForMe : [String : Any] =

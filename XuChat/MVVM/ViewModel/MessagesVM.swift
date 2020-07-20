@@ -16,13 +16,14 @@ class MessagesVM{
     let myID : String
 
     var lastMessageList = [MessageUser]()
+    var lastDictionary : [String : MessageUser] = [String : MessageUser]()
+
     
     init() {
         db = Firestore.firestore()
         myID = Auth.auth().currentUser!.uid
         print(myID)
     }
-    var lastDictionary : [String : MessageUser] = [String : MessageUser]()
     
     func getLastMessages(completionHandler : @escaping ()->() ){
         

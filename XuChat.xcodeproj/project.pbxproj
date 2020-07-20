@@ -196,13 +196,10 @@
 			children = (
 				FED74D5624B5A70700D1BCE5 /* XuChat.entitlements */,
 				FE85EDB924AE5DA900841BA9 /* Core */,
-				FE8E059524AC818F00367E5D /* ViewModel */,
-				FE8E059424AC818800367E5D /* View */,
-				FE8E059324AC817C00367E5D /* Model */,
 				FE8E059624AC81B000367E5D /* StoryBoard */,
 				FE85EDB424AE5B3300841BA9 /* Cell */,
+				FEC6263924C56BC700DA2C46 /* MVVM */,
 				FE5E780724ABFC20007BDD50 /* AppDelegate.swift */,
-				FEAFC67E24B0FD6D00AF6A73 /* ChattingCell.swift */,
 				FE5E780924ABFC20007BDD50 /* SceneDelegate.swift */,
 				FE85EDAE24AC87C100841BA9 /* GoogleService-Info.plist */,
 				FE5E781324ABFC21007BDD50 /* Assets.xcassets */,
@@ -234,6 +231,7 @@
 		FE85EDB424AE5B3300841BA9 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				FEAFC67E24B0FD6D00AF6A73 /* ChattingCell.swift */,
 				FE85EDB524AE5B5600841BA9 /* UsersCell.swift */,
 				FE85EDBE24AFBB7E00841BA9 /* ShuffleCell.swift */,
 			);
@@ -301,6 +299,16 @@
 				FE5E780D24ABFC20007BDD50 /* Main.storyboard */,
 			);
 			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+		FEC6263924C56BC700DA2C46 /* MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				FE8E059324AC817C00367E5D /* Model */,
+				FE8E059424AC818800367E5D /* View */,
+				FE8E059524AC818F00367E5D /* ViewModel */,
+			);
+			path = MVVM;
 			sourceTree = "<group>";
 		};
 		FED74D5324B466B800D1BCE5 /* Extension */ = {
