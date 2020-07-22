@@ -10,6 +10,7 @@
 		71F30E36A2ADDC1C094AAE00 /* Pods_XuChat_XuChatUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AC54C4C576F6078DA019DA4 /* Pods_XuChat_XuChatUITests.framework */; };
 		8599BDA3029D92DBAAABF531 /* Pods_XuChatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06FC1DBAF90CF69FCF59D092 /* Pods_XuChatTests.framework */; };
 		C0409E6D891B61820705F15C /* Pods_XuChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FC8130D8791DD033E34008A /* Pods_XuChat.framework */; };
+		FE0188AE24C835EB00FFAD68 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0188AD24C835EB00FFAD68 /* Date.swift */; };
 		FE4E3A8824BA25AF00D7C8DB /* UserStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4E3A8724BA25AF00D7C8DB /* UserStatus.swift */; };
 		FE4E3A8B24BA2ECF00D7C8DB /* FireStoreHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4E3A8A24BA2ECF00D7C8DB /* FireStoreHelper.swift */; };
 		FE4E3A8D24BA657F00D7C8DB /* MessagesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4E3A8C24BA657F00D7C8DB /* MessagesVM.swift */; };
@@ -70,6 +71,7 @@
 		7FC8130D8791DD033E34008A /* Pods_XuChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XuChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B50C272BFA91BDD2A9770EF3 /* Pods-XuChatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XuChatTests.debug.xcconfig"; path = "Target Support Files/Pods-XuChatTests/Pods-XuChatTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EDBCDE89013D95BF110406B5 /* Pods-XuChatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XuChatTests.release.xcconfig"; path = "Target Support Files/Pods-XuChatTests/Pods-XuChatTests.release.xcconfig"; sourceTree = "<group>"; };
+		FE0188AD24C835EB00FFAD68 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		FE4E3A8724BA25AF00D7C8DB /* UserStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatus.swift; sourceTree = "<group>"; };
 		FE4E3A8A24BA2ECF00D7C8DB /* FireStoreHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireStoreHelper.swift; sourceTree = "<group>"; };
 		FE4E3A8C24BA657F00D7C8DB /* MessagesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesVM.swift; sourceTree = "<group>"; };
@@ -315,6 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				FED74D5424B466D300D1BCE5 /* NotificationCenter.swift */,
+				FE0188AD24C835EB00FFAD68 /* Date.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -570,6 +573,7 @@
 				FE4E3A8824BA25AF00D7C8DB /* UserStatus.swift in Sources */,
 				FE85EDB124AC8A7C00841BA9 /* SignUpScene.swift in Sources */,
 				FE5E780824ABFC20007BDD50 /* AppDelegate.swift in Sources */,
+				FE0188AE24C835EB00FFAD68 /* Date.swift in Sources */,
 				FE85EDB624AE5B5600841BA9 /* UsersCell.swift in Sources */,
 				FE5E780A24ABFC20007BDD50 /* SceneDelegate.swift in Sources */,
 				FE85EDC124AFCE7A00841BA9 /* SelectImageScene.swift in Sources */,

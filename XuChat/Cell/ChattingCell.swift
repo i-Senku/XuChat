@@ -10,6 +10,7 @@ import UIKit
 
 class ChattingCell: UITableViewCell {
 
+    @IBOutlet weak var messageTime: UILabel!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var messageText: UILabel!
     var containerLeading: NSLayoutConstraint!
@@ -30,7 +31,7 @@ class ChattingCell: UITableViewCell {
                 
                 if isMe {
                     containerTrailing.isActive = true
-                    containerView.backgroundColor = .systemGreen
+                    containerView.backgroundColor = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
                 }else{
                     containerLeading.isActive = true
                     containerView.backgroundColor = .systemBackground

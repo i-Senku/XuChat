@@ -79,7 +79,7 @@ class ChattingVM{
     }
     
     //MARK:- Load more message when user scroll tableview
-    func loadMore(count : Int, completionHandler : @escaping ()->() ){
+    /*func loadMore(count : Int, completionHandler : @escaping ()->() ){
         
         db.collection("Message").document(currentID).collection(senderID).order(by: "time").limit(toLast: count+10).getDocuments { (snapshot, error) in
             if let error = error {
@@ -95,7 +95,7 @@ class ChattingVM{
             }
             completionHandler()
         }
-    }
+    }*/
     
     //MARK:- Set status for writing or unwriting
     func setWritingStatus(status: WritingUserStatus){

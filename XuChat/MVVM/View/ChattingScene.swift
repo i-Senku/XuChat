@@ -37,13 +37,12 @@ class ChattingScene: UIViewController {
     var myUserName : String!
     
     var resource : ImageResource?
-    var paginationCounter = 3
     
-    //var user : User?
         
     override func viewDidLoad() {
         super.viewDidLoad()
         messageText.backgroundColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
+        initConfiguration()
         keyboardResponder()
         setNavigationBarTitle()
     }
@@ -73,14 +72,13 @@ class ChattingScene: UIViewController {
         messageVM.writeMessage(messageText: message.trimmingCharacters(in: .whitespacesAndNewlines))
         
         if let userID = userID, let userImage = resource?.downloadURL.absoluteString, let userName = userName, let message = messageText.text {
-            print(message)
+
             messageVM.setLastMessage(userID: userID, userImage: userImage, userName: userName, lastMessage: message)
         }
         
         messageText.text = ""
         textViewHeight.constant = messageText.contentSize.height
         messageText.becomeFirstResponder()
-        view.endEditing(true)
     }
 }
 
@@ -94,6 +92,17 @@ extension ChattingScene{
         UIView.animate(withDuration: 0.7) {
             self.container.transform = .identity
         }
+    }
+    
+    fileprivate func initConfiguration(){
+        chattingTableView.isUserInteractionEnabled = true
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(endEditing))
+        chattingTableView.addGestureRecognizer(gestureRecognizer)
+    }
+    
+    @objc func endEditing(){
+        print("Tıklandı")
+        messageText.endEditing(true)
     }
     
     fileprivate func setNavigationBarTitle(){
@@ -176,27 +185,35 @@ extension ChattingScene : UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "chattingCell", for: indexPath) as! ChattingCell
         let message = messageVM.messageList[indexPath.row]
+        
+        //Time Message
+        let minute = message.time.dateValue().get(.minute)
+        let hour = message.time.dateValue().get(.hour)
+
         cell.messageText.text = message.messageText
         cell.isMe = message.isMyMessage
+        cell.messageTime.text = "\(hour):\(minute)"
+        
         return cell
     }
 
     //MARK: Load More Data
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+    /*func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         let currentOffset = scrollView.contentOffset.y
         let maxOffset = scrollView.contentSize.height - scrollView.frame.height
-        print(maxOffset)
-        print(currentOffset)
+        //print(maxOffset)
+        //print(currentOffset)
         if maxOffset > currentOffset * CGFloat(paginationCounter) {
             paginationCounter += 2
-            print("girdi")
+            //print("girdi")
             messageVM.loadMore(count: messageVM.messageList.count) {
                 self.chattingTableView.reloadData()
             }
         }
-    }
+    }*/
     
 }
 
@@ -242,12 +259,11 @@ extension ChattingScene {
                     }
                     
                 }else{
-                    let calendar = Calendar.current
-                    let time = calendar.dateComponents([.hour,.minute], from: status.time.dateValue())
                     
-                    if let hour = time.hour, let minute = time.minute {
-                        self.subTitle.text = "Son Görülme : \(String(describing: hour)):\(String(describing: minute))"
-                    }
+                    let minute = status.time.dateValue().get(.minute)
+                    let hour = status.time.dateValue().get(.hour)
+                    
+                    self.subTitle.text = "Son Görülme : \(hour):\(minute)"
                 }
             }else{
                 self.subTitle.text = ""
