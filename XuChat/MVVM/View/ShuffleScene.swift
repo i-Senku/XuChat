@@ -20,8 +20,13 @@ class ShuffleUserScene: UIViewController {
     let shuffleVM = ShuffleUserVM()
     let db = Firestore.firestore()
     
+    let searchController = UISearchController(searchResultsController: nil)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = true
+
         
         navigationItem.hidesBackButton = true
         
@@ -74,7 +79,7 @@ extension ShuffleUserScene : UITableViewDelegate,UITableViewDataSource {
         let url = URL(string: user.imageURL!)!
         let resource = ImageResource(downloadURL: url, cacheKey: user.imageURL!)
         cell.profileImage.kf.setImage(with: resource)
-        
+        cell.premiumImage.isHidden = user.isPremium! ? false : true
         cell.selectionStyle = .none
         
                 

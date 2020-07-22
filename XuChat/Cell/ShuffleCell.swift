@@ -14,6 +14,7 @@ class ShuffleCell: UITableViewCell {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var city: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var premiumImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

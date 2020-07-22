@@ -34,7 +34,6 @@ class MessageScene: UIViewController {
     fileprivate func showProgress(){
         hud.textLabel.text = "Loading"
         hud.show(in: view)
-        
     }
 }
 
@@ -48,12 +47,13 @@ extension MessageScene : UITableViewDelegate,UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constant.userCellName, for: indexPath) as! UsersCell
         
         let data = lastMessage.lastMessageList[indexPath.row]
-        
-        let calendar = Calendar.current
-        let time = calendar.dateComponents([.hour,.minute], from: data.time.dateValue())
+        let hour = data.time.dateValue().get(.hour)
+        let minute = data.time.dateValue().get(.minute)
         
         cell.userName.text = data.userName
-        cell.time.text = "\(time.hour!):\(time.minute!)"
+        cell.time.text = "\(hour):\(minute)"
+        
+        
         cell.lastMessage.text = data.lastMessage
         
         let resource = ImageResource(downloadURL: URL(string: data.userImage)!, cacheKey: data.userImage)

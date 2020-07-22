@@ -231,12 +231,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="gC2-Bd-LjW">
-                                <rect key="frame" x="0.0" y="140" width="414" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Kp2-eP-Ruk">
-                                <rect key="frame" x="0.0" y="196" width="414" height="617"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="shuffleCell" rowHeight="108" id="TQ0-RW-277" customClass="ShuffleCell" customModule="XuChat" customModuleProvider="target">
@@ -309,6 +305,7 @@
                                             <outlet property="city" destination="wFn-El-57C" id="Prf-ay-S3H"/>
                                             <outlet property="descriptionText" destination="PA8-0v-iKP" id="T6p-0m-w3x"/>
                                             <outlet property="name" destination="JLl-3L-LLL" id="rcw-em-Shm"/>
+                                            <outlet property="premiumImage" destination="jKs-ti-3Op" id="Svk-rK-Ndg"/>
                                             <outlet property="profileImage" destination="xLd-Iq-IsD" id="DhL-Gq-1wi"/>
                                         </connections>
                                     </tableViewCell>
@@ -321,12 +318,9 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="gC2-Bd-LjW" firstAttribute="top" secondItem="UVV-Vw-Fir" secondAttribute="top" id="DPw-or-sc3"/>
-                            <constraint firstItem="gC2-Bd-LjW" firstAttribute="leading" secondItem="UVV-Vw-Fir" secondAttribute="leading" id="Tws-RL-Oss"/>
+                            <constraint firstItem="Kp2-eP-Ruk" firstAttribute="top" secondItem="UVV-Vw-Fir" secondAttribute="top" id="TJE-NG-ah6"/>
                             <constraint firstItem="UVV-Vw-Fir" firstAttribute="trailing" secondItem="Kp2-eP-Ruk" secondAttribute="trailing" id="eQw-ac-Wcc"/>
                             <constraint firstItem="UVV-Vw-Fir" firstAttribute="bottom" secondItem="Kp2-eP-Ruk" secondAttribute="bottom" id="jq6-vz-oan"/>
-                            <constraint firstItem="gC2-Bd-LjW" firstAttribute="trailing" secondItem="UVV-Vw-Fir" secondAttribute="trailing" id="ke2-Zq-ojl"/>
-                            <constraint firstItem="Kp2-eP-Ruk" firstAttribute="top" secondItem="gC2-Bd-LjW" secondAttribute="bottom" id="lMT-hU-Yia"/>
                             <constraint firstItem="Kp2-eP-Ruk" firstAttribute="leading" secondItem="UVV-Vw-Fir" secondAttribute="leading" id="pvY-eL-MRF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UVV-Vw-Fir"/>
@@ -700,7 +694,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="MnK-ok-WbR"/>
+        <segue reference="1ae-yg-3qS"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="ercan" width="640" height="640"/>

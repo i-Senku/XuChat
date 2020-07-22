@@ -9,13 +9,16 @@
 import UIKit
 import FirebaseFirestore
 import FirebaseStorage
+import JGProgressHUD
 
 class SelectImageScene: UIViewController {
 
     @IBOutlet weak var selectButton: UIButton!
     @IBOutlet weak var selectedImage: UIImageView!
-    var isSelectedImage : Bool!
     
+    let hud = JGProgressHUD(style: .dark)
+    
+    var isSelectedImage : Bool!
     var nickName : String?
     var mail : String?
     var userID : String?
@@ -23,6 +26,7 @@ class SelectImageScene: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         isSelectedImage = false
+        
     }
 
     @IBAction func selectImage(_ sender: Any) {
@@ -35,11 +39,19 @@ class SelectImageScene: UIViewController {
             showImagePickerView()
         }
     }
+    
+    fileprivate func showProgress(){
+        hud.textLabel.text = "Loading"
+        hud.show(in: view)
+    }
 }
 
 extension SelectImageScene {
     
     fileprivate func saveToFireStore(userID:String, name: String, mail: String){
+        
+        selectButton.isEnabled = false
+        showProgress()
         
         guard let imageData = selectedImage.image?.pngData() else { return}
         
@@ -50,7 +62,7 @@ extension SelectImageScene {
                 print("Hata : \(error.localizedDescription)")
                 return
             }
-            reference.downloadURL { (url, error) in
+            reference.downloadURL { [weak self] (url, error) in
                 if let error = error {
                     print("URL Hatası : \(error.localizedDescription)")
                     return
@@ -65,7 +77,8 @@ extension SelectImageScene {
                     "isPremium" : false
                     ]) { (error) in
                         if error == nil {
-                            self.dismiss(animated: true, completion: nil)
+                            self?.hud.dismiss()
+                            self?.dismiss(animated: true, completion: nil)
                             print("Kullanıcı kaydedildi")
                         }
                     }
