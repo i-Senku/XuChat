@@ -30,6 +30,20 @@ class ChattingScene: UIViewController {
         return view
     }()
     
+    var refreshControl : UIRefreshControl = {
+       let control = UIRefreshControl()
+        control.addTarget(self, action: #selector(refreshControl(sender:)), for: .valueChanged)
+        return control
+    }()
+    
+    @objc func refreshControl(sender : UIRefreshControl){
+        count += 10
+        messageVM.loadMore(count: count) { [weak self] in
+            self?.chattingTableView.reloadData()
+        }
+        sender.endRefreshing()
+    }
+    
     var messageVM : ChattingVM!
     
     var userID : String?
@@ -37,11 +51,13 @@ class ChattingScene: UIViewController {
     var myUserName : String!
     
     var resource : ImageResource?
+    var count = 20
     
         
     override func viewDidLoad() {
         super.viewDidLoad()
         messageText.backgroundColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
+        chattingTableView.refreshControl = refreshControl
         initConfiguration()
         keyboardResponder()
         setNavigationBarTitle()
