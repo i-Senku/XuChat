@@ -315,9 +315,17 @@
                                     <outlet property="delegate" destination="Gy6-Wi-Bz8" id="RJY-KA-Kcu"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qJz-dp-NWW">
+                                <rect key="frame" x="20.5" y="717" width="373" height="358"/>
+                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="qJz-dp-NWW" firstAttribute="width" secondItem="vHV-Ua-3LQ" secondAttribute="width" multiplier="0.9" id="52p-oX-zPI"/>
+                            <constraint firstItem="qJz-dp-NWW" firstAttribute="centerX" secondItem="vHV-Ua-3LQ" secondAttribute="centerX" id="Eak-wL-t8p"/>
+                            <constraint firstItem="qJz-dp-NWW" firstAttribute="height" secondItem="vHV-Ua-3LQ" secondAttribute="height" multiplier="0.4" id="H14-5y-Po1"/>
+                            <constraint firstItem="qJz-dp-NWW" firstAttribute="centerY" secondItem="vHV-Ua-3LQ" secondAttribute="centerY" multiplier="2" id="JbJ-FL-2xM"/>
                             <constraint firstItem="Kp2-eP-Ruk" firstAttribute="top" secondItem="UVV-Vw-Fir" secondAttribute="top" id="TJE-NG-ah6"/>
                             <constraint firstItem="UVV-Vw-Fir" firstAttribute="trailing" secondItem="Kp2-eP-Ruk" secondAttribute="trailing" id="eQw-ac-Wcc"/>
                             <constraint firstItem="UVV-Vw-Fir" firstAttribute="bottom" secondItem="Kp2-eP-Ruk" secondAttribute="bottom" id="jq6-vz-oan"/>
@@ -335,6 +343,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="containerCenterY" destination="JbJ-FL-2xM" id="mQT-kK-0pn"/>
+                        <outlet property="infoUserContainer" destination="qJz-dp-NWW" id="QJ2-C5-hKP"/>
                         <outlet property="tableView" destination="Kp2-eP-Ruk" id="hCZ-9q-pst"/>
                         <segue destination="YAb-P5-iaz" kind="show" identifier="toChattingFromShuffle" id="1ae-yg-3qS"/>
                     </connections>

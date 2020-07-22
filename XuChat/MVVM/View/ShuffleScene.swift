@@ -14,6 +14,8 @@ import JGProgressHUD
 
 class ShuffleUserScene: UIViewController {
 
+    @IBOutlet weak var containerCenterY: NSLayoutConstraint!
+    @IBOutlet weak var infoUserContainer: UIView!
     @IBOutlet weak var tableView: UITableView!
     
     let hud = JGProgressHUD(style: .dark)
@@ -87,13 +89,20 @@ extension ShuffleUserScene : UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let list = shuffleVM.userList[indexPath.row]
+        
+        UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0, options: .curveEaseOut, animations: {
+            self.infoUserContainer.transform = CGAffineTransform(translationX: 0, y: -self.view.bounds.height/2)
+
+        }, completion: nil)
+        infoUserContainer.transform = CGAffineTransform(translationX: 0, y: -view.bounds.height/2)
+        
+        /*let list = shuffleVM.userList[indexPath.row]
         let url = URL(string: list.imageURL!)!
         let resource = ImageResource(downloadURL: url, cacheKey: list.imageURL!)
         
         let userData : [String:Any] =
             ["userID" : list.userID, "userName" : list.userName!, "resource" : resource]
-        performSegue(withIdentifier: Constant.segueToChattingFromShuffle, sender: userData)
+        performSegue(withIdentifier: Constant.segueToChattingFromShuffle, sender: userData)*/
     }
     
     
