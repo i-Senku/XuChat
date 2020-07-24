@@ -315,16 +315,75 @@
                                     <outlet property="delegate" destination="Gy6-Wi-Bz8" id="RJY-KA-Kcu"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qJz-dp-NWW">
-                                <rect key="frame" x="20.5" y="717" width="373" height="358"/>
-                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qJz-dp-NWW">
+                                <rect key="frame" x="20.5" y="761.5" width="373" height="269"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="4hA-FO-ycq">
+                                        <rect key="frame" x="156.5" y="8" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="CoH-Oh-sMO"/>
+                                            <constraint firstAttribute="width" constant="60" id="VLo-rX-Apj"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Cg3-0j-xwT">
+                                        <rect key="frame" x="20" y="116.5" width="333" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zmQ-IJ-Qic">
+                                                <rect key="frame" x="0.0" y="0.0" width="158.5" height="30"/>
+                                                <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Profile Git">
+                                                    <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TPw-49-sC4">
+                                                <rect key="frame" x="174.5" y="0.0" width="158.5" height="30"/>
+                                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Mesaj">
+                                                    <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nakatake San" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="we6-OP-Zv2">
+                                        <rect key="frame" x="20" y="76" width="333" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="we6-OP-Zv2" firstAttribute="top" secondItem="4hA-FO-ycq" secondAttribute="bottom" constant="8" id="7Gb-jp-9kK"/>
+                                    <constraint firstItem="4hA-FO-ycq" firstAttribute="top" secondItem="qJz-dp-NWW" secondAttribute="top" constant="8" id="Ixm-2m-2dC"/>
+                                    <constraint firstItem="Cg3-0j-xwT" firstAttribute="top" secondItem="we6-OP-Zv2" secondAttribute="bottom" constant="20" id="S6J-Gw-8jz"/>
+                                    <constraint firstAttribute="trailing" secondItem="we6-OP-Zv2" secondAttribute="trailing" constant="20" id="ajo-QM-AQQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="Cg3-0j-xwT" secondAttribute="trailing" constant="20" id="hC1-eT-TN1"/>
+                                    <constraint firstItem="4hA-FO-ycq" firstAttribute="centerX" secondItem="qJz-dp-NWW" secondAttribute="centerX" id="nUN-uR-DnQ"/>
+                                    <constraint firstItem="Cg3-0j-xwT" firstAttribute="leading" secondItem="qJz-dp-NWW" secondAttribute="leading" constant="20" id="rZH-Vo-rZE"/>
+                                    <constraint firstItem="we6-OP-Zv2" firstAttribute="leading" secondItem="qJz-dp-NWW" secondAttribute="leading" constant="20" id="tmL-Kr-PKY"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="qJz-dp-NWW" firstAttribute="width" secondItem="vHV-Ua-3LQ" secondAttribute="width" multiplier="0.9" id="52p-oX-zPI"/>
                             <constraint firstItem="qJz-dp-NWW" firstAttribute="centerX" secondItem="vHV-Ua-3LQ" secondAttribute="centerX" id="Eak-wL-t8p"/>
-                            <constraint firstItem="qJz-dp-NWW" firstAttribute="height" secondItem="vHV-Ua-3LQ" secondAttribute="height" multiplier="0.4" id="H14-5y-Po1"/>
+                            <constraint firstItem="qJz-dp-NWW" firstAttribute="height" secondItem="vHV-Ua-3LQ" secondAttribute="height" multiplier="0.3" id="H14-5y-Po1"/>
                             <constraint firstItem="qJz-dp-NWW" firstAttribute="centerY" secondItem="vHV-Ua-3LQ" secondAttribute="centerY" multiplier="2" id="JbJ-FL-2xM"/>
                             <constraint firstItem="Kp2-eP-Ruk" firstAttribute="top" secondItem="UVV-Vw-Fir" secondAttribute="top" id="TJE-NG-ah6"/>
                             <constraint firstItem="UVV-Vw-Fir" firstAttribute="trailing" secondItem="Kp2-eP-Ruk" secondAttribute="trailing" id="eQw-ac-Wcc"/>
@@ -717,5 +776,6 @@
         <image name="signIn" width="1316" height="807"/>
         <image name="signup" width="1406" height="965"/>
         <image name="upload" width="1000" height="854"/>
+        <image name="user" width="600" height="600"/>
     </resources>
 </document>

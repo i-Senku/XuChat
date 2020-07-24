@@ -72,6 +72,7 @@ extension ShuffleUserScene : UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: Constant.shuffleCellName, for: indexPath) as! ShuffleCell
         
         let user = shuffleVM.userList[indexPath.row]
@@ -84,17 +85,26 @@ extension ShuffleUserScene : UITableViewDelegate,UITableViewDataSource {
         cell.premiumImage.isHidden = user.isPremium! ? false : true
         cell.selectionStyle = .none
         
-                
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0, options: .curveEaseOut, animations: {
-            self.infoUserContainer.transform = CGAffineTransform(translationX: 0, y: -self.view.bounds.height/2)
+        if infoUserContainer.isHidden {
+            
+            UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0, options: .curveEaseOut, animations: {
+                self.infoUserContainer.transform = CGAffineTransform(translationX: 0, y: -self.view.bounds.height/2)
+                self.infoUserContainer.isHidden = false
+            }, completion: nil)
+            
+        }else {
+            
+            UIView.animate(withDuration: 0.7) {
+                self.infoUserContainer.transform = .identity
+                self.infoUserContainer.isHidden = true
+            }
+        }
 
-        }, completion: nil)
-        infoUserContainer.transform = CGAffineTransform(translationX: 0, y: -view.bounds.height/2)
         
         /*let list = shuffleVM.userList[indexPath.row]
         let url = URL(string: list.imageURL!)!
