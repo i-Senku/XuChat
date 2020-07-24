@@ -24,7 +24,6 @@
 		FE5E781724ABFC21007BDD50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE5E781524ABFC21007BDD50 /* LaunchScreen.storyboard */; };
 		FE5E782224ABFC21007BDD50 /* XuChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5E782124ABFC21007BDD50 /* XuChatTests.swift */; };
 		FE5E782D24ABFC21007BDD50 /* XuChatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5E782C24ABFC21007BDD50 /* XuChatUITests.swift */; };
-		FE85EDAF24AC87C100841BA9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE85EDAE24AC87C100841BA9 /* GoogleService-Info.plist */; };
 		FE85EDB124AC8A7C00841BA9 /* SignUpScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE85EDB024AC8A7C00841BA9 /* SignUpScene.swift */; };
 		FE85EDB324AC97CC00841BA9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE85EDB224AC97CC00841BA9 /* User.swift */; };
 		FE85EDB624AE5B5600841BA9 /* UsersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE85EDB524AE5B5600841BA9 /* UsersCell.swift */; };
@@ -39,6 +38,7 @@
 		FEAFC68124B1231000AF6A73 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAFC68024B1231000AF6A73 /* Message.swift */; };
 		FEAFC68324B1240100AF6A73 /* ChattingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAFC68224B1240100AF6A73 /* ChattingVM.swift */; };
 		FEAFC68524B134D000AF6A73 /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAFC68424B134D000AF6A73 /* MainTabBar.swift */; };
+		FECE395324CACCBB00707589 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FECE395224CACCBB00707589 /* GoogleService-Info.plist */; };
 		FED74D5524B466D300D1BCE5 /* NotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED74D5424B466D300D1BCE5 /* NotificationCenter.swift */; };
 		FEE5B02424C43090004EA479 /* NavigationSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE5B02324C43090004EA479 /* NavigationSignIn.swift */; };
 		FEE7F32D24B8F3E2007AB223 /* WritingUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE7F32C24B8F3E2007AB223 /* WritingUser.swift */; };
@@ -91,7 +91,6 @@
 		FE5E782824ABFC21007BDD50 /* XuChatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XuChatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE5E782C24ABFC21007BDD50 /* XuChatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XuChatUITests.swift; sourceTree = "<group>"; };
 		FE5E782E24ABFC21007BDD50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FE85EDAE24AC87C100841BA9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FE85EDB024AC8A7C00841BA9 /* SignUpScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScene.swift; sourceTree = "<group>"; };
 		FE85EDB224AC97CC00841BA9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FE85EDB524AE5B5600841BA9 /* UsersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersCell.swift; sourceTree = "<group>"; };
@@ -106,6 +105,7 @@
 		FEAFC68024B1231000AF6A73 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		FEAFC68224B1240100AF6A73 /* ChattingVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingVM.swift; sourceTree = "<group>"; };
 		FEAFC68424B134D000AF6A73 /* MainTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
+		FECE395224CACCBB00707589 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FED74D5424B466D300D1BCE5 /* NotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenter.swift; sourceTree = "<group>"; };
 		FED74D5624B5A70700D1BCE5 /* XuChat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = XuChat.entitlements; sourceTree = "<group>"; };
 		FEE5B02324C43090004EA479 /* NavigationSignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationSignIn.swift; sourceTree = "<group>"; };
@@ -203,7 +203,7 @@
 				FEC6263924C56BC700DA2C46 /* MVVM */,
 				FE5E780724ABFC20007BDD50 /* AppDelegate.swift */,
 				FE5E780924ABFC20007BDD50 /* SceneDelegate.swift */,
-				FE85EDAE24AC87C100841BA9 /* GoogleService-Info.plist */,
+				FECE395224CACCBB00707589 /* GoogleService-Info.plist */,
 				FE5E781324ABFC21007BDD50 /* Assets.xcassets */,
 				FE5E781524ABFC21007BDD50 /* LaunchScreen.storyboard */,
 				FE5E781824ABFC21007BDD50 /* Info.plist */,
@@ -432,7 +432,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE5E781724ABFC21007BDD50 /* LaunchScreen.storyboard in Resources */,
-				FE85EDAF24AC87C100841BA9 /* GoogleService-Info.plist in Resources */,
+				FECE395324CACCBB00707589 /* GoogleService-Info.plist in Resources */,
 				FE5E781424ABFC21007BDD50 /* Assets.xcassets in Resources */,
 				FE5E780F24ABFC20007BDD50 /* Main.storyboard in Resources */,
 			);
