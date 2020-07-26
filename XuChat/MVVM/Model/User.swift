@@ -10,6 +10,7 @@
 struct User {
     
     let userID : String
+    let token : String
     let userName : String?
     let userMail : String?
     let imageURL : String?
@@ -29,5 +30,6 @@ struct User {
         self.gender = user["gender"] as? String
         self.job = user["job"] as? String
         self.isPremium = user["isPremium"] as? Bool
+        self.token = user["token"] as! String
     }
 }

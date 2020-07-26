@@ -50,6 +50,8 @@ class ChattingScene: UIViewController {
     var userName : String?
     var myUserName : String!
     
+    var token : String?
+    
     var resource : ImageResource?
     var count = 20
     
@@ -87,9 +89,11 @@ class ChattingScene: UIViewController {
         
         messageVM.writeMessage(messageText: message.trimmingCharacters(in: .whitespacesAndNewlines))
         
-        if let userID = userID, let userImage = resource?.downloadURL.absoluteString, let userName = userName, let message = messageText.text {
+        if let userID = userID, let myID = Auth.auth().currentUser?.uid, let userImage = resource?.downloadURL.absoluteString, let userName = userName, let message = messageText.text , let to = token{
 
             messageVM.setLastMessage(userID: userID, userImage: userImage, userName: userName, lastMessage: message)
+            
+            FireStoreHelper.shared.pushNotification(userID: myID, userName: userName, to: to, title: userName, body: message, imageURL: userImage)
         }
         
         messageText.text = ""
@@ -117,8 +121,7 @@ extension ChattingScene{
     }
     
     @objc func endEditing(){
-        print("Tıklandı")
-        messageText.endEditing(true)
+         messageText.endEditing(true)
     }
     
     fileprivate func setNavigationBarTitle(){
@@ -160,7 +163,6 @@ extension ChattingScene{
     
     fileprivate func readAllMessage(){
         view.backgroundColor = UIColor(white: 0.95, alpha: 1)
-        //let imageURL = self.resource!.downloadURL.absoluteString
         
             messageVM.readMessage(){
                 self.chattingTableView.reloadData()
@@ -215,21 +217,6 @@ extension ChattingScene : UITableViewDelegate,UITableViewDataSource {
         
         return cell
     }
-
-    //MARK: Load More Data
-    /*func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        let currentOffset = scrollView.contentOffset.y
-        let maxOffset = scrollView.contentSize.height - scrollView.frame.height
-        //print(maxOffset)
-        //print(currentOffset)
-        if maxOffset > currentOffset * CGFloat(paginationCounter) {
-            paginationCounter += 2
-            //print("girdi")
-            messageVM.loadMore(count: messageVM.messageList.count) {
-                self.chattingTableView.reloadData()
-            }
-        }
-    }*/
     
 }
 

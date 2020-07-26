@@ -68,11 +68,14 @@ extension SelectImageScene {
                     return
                 }
                 if let url = url?.absoluteString {
+                    let app = UIApplication.shared.delegate as! AppDelegate
+                    
                     let db = Firestore.firestore()
                     db.collection("Users").document(userID).setData([
                     "id" : userID,
                     "name" : name,
                     "mail" : mail,
+                    "token" : app.token!,
                     "imageURL" : url,
                     "isPremium" : false
                     ]) { (error) in

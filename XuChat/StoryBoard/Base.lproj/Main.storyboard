@@ -592,7 +592,7 @@
         <!--Chatting Scene-->
         <scene sceneID="CuQ-xd-ykt">
             <objects>
-                <viewController id="YAb-P5-iaz" customClass="ChattingScene" customModule="XuChat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="chattingScene" id="YAb-P5-iaz" customClass="ChattingScene" customModule="XuChat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GfL-9s-IPr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -763,7 +763,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="1ae-yg-3qS"/>
+        <segue reference="MnK-ok-WbR"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="ercan" width="640" height="640"/>

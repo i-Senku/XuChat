@@ -67,4 +67,44 @@ class FireStoreHelper{
             }
         }
     }
+    //MARK:- Set FCM Notification
+    
+    func pushNotification(userID : String,userName : String, to : String,title : String,body : String, imageURL : String){
+        
+        let session = URLSession.shared
+        
+        let url = URL(string:"https://fcm.googleapis.com/fcm/send")!
+        var request = URLRequest(url: url)
+        
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("key=AAAAmpUlSxQ:APA91bFywgokqIOG2c8LejqE638qCy5cQkD_NW0KIjX5YmkXfeMQ5s8b1GIDoHrbOV9qEV9iNhUKRbxv2nqJHQJVzXaj_xmHqI1NlkoYbEpLRL2_wKdhpToLhDgXoKhOtBE7hvOl1CMi", forHTTPHeaderField: "Authorization")
+        
+        let body : [String : Any] = [
+            "to":to,
+            "notification": [
+                "title": title,
+                "body": body,
+                "badge": "0",
+                "sound": "default"
+            ],
+            "content_available": true,
+            "data" : [
+                "userID" : userID,
+                "userName" : userName,
+                "imageURL" : imageURL
+            ]
+        ]
+        
+        print(body)
+        
+        let bodyData = try! JSONSerialization.data(withJSONObject: body, options: [])
+            
+        session.uploadTask(with: request, from: bodyData) { (data, response, error) in
+            print(body)
+            print(data)
+        }.resume()
+        
+    }
+
 }
