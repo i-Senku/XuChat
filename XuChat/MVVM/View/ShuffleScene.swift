@@ -29,7 +29,6 @@ class ShuffleUserScene: UIViewController {
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = true
 
-        
         navigationItem.hidesBackButton = true
         
         let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
@@ -82,10 +81,12 @@ extension ShuffleUserScene : UITableViewDelegate,UITableViewDataSource {
         
         let url = URL(string: user.imageURL!)!
         let resource = ImageResource(downloadURL: url, cacheKey: user.imageURL!)
+        
         cell.profileImage.kf.setImage(with: resource)
         cell.premiumImage.isHidden = user.isPremium! ? false : true
-        cell.selectionStyle = .none
+        cell.userID = user.userID
         
+        cell.selectionStyle = .none
         return cell
     }
     

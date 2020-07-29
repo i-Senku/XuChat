@@ -20,5 +20,6 @@ struct Constant {
     static let segueToImage = "toImage"
     static let segueToChattingFromShuffle = "toChattingFromShuffle"
     static let toTabbar = "toTabbar"
+    static let toMainTabBarFromRegister = "toMainTabBarFromRegister"
     
 }

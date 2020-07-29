@@ -217,6 +217,7 @@
                     <connections>
                         <outlet property="selectButton" destination="Fb9-f6-Ndq" id="87V-G7-SV7"/>
                         <outlet property="selectedImage" destination="7pp-WV-v5S" id="opP-ng-T9s"/>
+                        <segue destination="cbN-Zg-NZd" kind="show" identifier="toMainTabBarFromRegister" id="YWa-e2-rTt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2rc-Mx-jXl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -228,12 +229,13 @@
             <objects>
                 <viewController storyboardIdentifier="messageScene" modalPresentationStyle="fullScreen" id="Gy6-Wi-Bz8" customClass="ShuffleUserScene" customModule="XuChat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vHV-Ua-3LQ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Kp2-eP-Ruk">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Kp2-eP-Ruk">
+                                <rect key="frame" x="0.0" y="56" width="414" height="703"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <inset key="separatorInset" minX="90" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="shuffleCell" rowHeight="108" id="TQ0-RW-277" customClass="ShuffleCell" customModule="XuChat" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="108"/>
@@ -246,30 +248,30 @@
                                                     <rect key="frame" x="8" y="8" width="398" height="92"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ercan" translatesAutoresizingMaskIntoConstraints="NO" id="xLd-Iq-IsD">
-                                                            <rect key="frame" x="8" y="11" width="70" height="70"/>
+                                                            <rect key="frame" x="8" y="16" width="60" height="60"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="70" id="JEJ-CU-0BW"/>
-                                                                <constraint firstAttribute="height" constant="70" id="tId-Di-TBh"/>
+                                                                <constraint firstAttribute="width" constant="60" id="JEJ-CU-0BW"/>
+                                                                <constraint firstAttribute="height" constant="60" id="tId-Di-TBh"/>
                                                             </constraints>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Per-n1-FeQ">
-                                                            <rect key="frame" x="86" y="11" width="122.5" height="64.5"/>
+                                                            <rect key="frame" x="82" y="16" width="115.5" height="61.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ercan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLl-3L-LLL">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="122.5" height="20.5"/>
-                                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="115.5" height="19.5"/>
+                                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yazılım Mühendisi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PA8-0v-iKP">
-                                                                    <rect key="frame" x="0.0" y="24.5" width="122.5" height="18"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                    <rect key="frame" x="0.0" y="23.5" width="115.5" height="17"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="İstanbul" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wFn-El-57C">
-                                                                    <rect key="frame" x="0.0" y="46.5" width="122.5" height="18"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                    <rect key="frame" x="0.0" y="44.5" width="115.5" height="17"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -282,15 +284,25 @@
                                                                 <constraint firstAttribute="width" constant="40" id="i9J-nQ-P6S"/>
                                                             </constraints>
                                                         </imageView>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="DFG-Ix-B9h">
+                                                            <rect key="frame" x="60" y="38.5" width="16" height="15"/>
+                                                            <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="16" id="4GK-M6-vLz"/>
+                                                                <constraint firstAttribute="height" constant="16" id="Ipa-gV-457"/>
+                                                            </constraints>
+                                                        </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="jKs-ti-3Op" firstAttribute="centerY" secondItem="Yel-qW-49t" secondAttribute="centerY" id="HeN-Ec-LLr"/>
+                                                        <constraint firstItem="DFG-Ix-B9h" firstAttribute="centerX" secondItem="xLd-Iq-IsD" secondAttribute="trailing" id="MmP-BP-6TS"/>
                                                         <constraint firstItem="xLd-Iq-IsD" firstAttribute="centerY" secondItem="Yel-qW-49t" secondAttribute="centerY" id="NTa-Ew-cjv"/>
                                                         <constraint firstAttribute="trailing" secondItem="jKs-ti-3Op" secondAttribute="trailing" constant="8" id="PFd-HX-uIM"/>
                                                         <constraint firstItem="xLd-Iq-IsD" firstAttribute="leading" secondItem="Yel-qW-49t" secondAttribute="leading" constant="8" id="Tcl-2c-Fjm"/>
+                                                        <constraint firstItem="DFG-Ix-B9h" firstAttribute="centerY" secondItem="xLd-Iq-IsD" secondAttribute="centerY" id="hiB-Vg-vTN"/>
                                                         <constraint firstItem="Per-n1-FeQ" firstAttribute="top" secondItem="xLd-Iq-IsD" secondAttribute="top" id="qvb-OD-ZxM"/>
-                                                        <constraint firstItem="Per-n1-FeQ" firstAttribute="leading" secondItem="xLd-Iq-IsD" secondAttribute="trailing" constant="8" id="wME-C9-94V"/>
+                                                        <constraint firstItem="Per-n1-FeQ" firstAttribute="leading" secondItem="xLd-Iq-IsD" secondAttribute="trailing" constant="14" id="wME-C9-94V"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -302,6 +314,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="circleStatus" destination="DFG-Ix-B9h" id="aAI-5G-sBn"/>
                                             <outlet property="city" destination="wFn-El-57C" id="Prf-ay-S3H"/>
                                             <outlet property="descriptionText" destination="PA8-0v-iKP" id="T6p-0m-w3x"/>
                                             <outlet property="name" destination="JLl-3L-LLL" id="rcw-em-Shm"/>
@@ -316,7 +329,7 @@
                                 </connections>
                             </tableView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qJz-dp-NWW">
-                                <rect key="frame" x="20.5" y="761.5" width="373" height="269"/>
+                                <rect key="frame" x="20.5" y="715.5" width="373" height="253"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="4hA-FO-ycq">
                                         <rect key="frame" x="156.5" y="8" width="60" height="60"/>
@@ -410,18 +423,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JOI-Y5-nWA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1258" y="-1114"/>
+            <point key="canvasLocation" x="1257.9710144927537" y="-1114.2857142857142"/>
         </scene>
         <!--Message-->
         <scene sceneID="mQh-F2-dbl">
             <objects>
-                <viewController id="bQW-S7-SQy" customClass="MessageScene" customModule="XuChat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="bQW-S7-SQy" customClass="MessageScene" customModule="XuChat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SAG-DM-jht">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ktd-zV-zAX">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="56" width="414" height="703"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="userCell" rowHeight="85" id="haO-ZV-56F" customClass="UsersCell" customModule="XuChat" customModuleProvider="target">
@@ -508,7 +521,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FM4-aT-oXD"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Message" largeTitleDisplayMode="always" id="ek0-Im-4hh"/>
+                    <navigationItem key="navigationItem" title="Message" largeTitleDisplayMode="always" id="ek0-Im-4hh">
+                        <barButtonItem key="backBarButtonItem" title=" " id="ZEj-i9-Gsh"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Ktd-zV-zAX" id="jMI-FX-Izu"/>
                     </connections>
@@ -523,7 +538,7 @@
                 <navigationController id="GfV-c8-9p6" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" id="ff5-ax-63t"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="wNK-x2-wJ6">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="108"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -539,7 +554,7 @@
             <objects>
                 <viewController id="5gg-Ff-hx9" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xzv-K8-n4K">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="oQr-nf-2FS"/>
@@ -553,7 +568,7 @@
         <!--TabBar-->
         <scene sceneID="ITT-sa-3TK">
             <objects>
-                <tabBarController storyboardIdentifier="mainTabBar" id="cbN-Zg-NZd" customClass="MainTabBar" customModule="XuChat" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="mainTabBar" modalPresentationStyle="fullScreen" id="cbN-Zg-NZd" customClass="MainTabBar" customModule="XuChat" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="TabBar" id="0zR-2J-2lH"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sXD-ez-vVh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -573,11 +588,11 @@
         <!--Messages-->
         <scene sceneID="FW8-gT-0gD">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gJc-TP-K4D" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="gJc-TP-K4D" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Messages" image="message.fill" catalog="system" id="hn3-td-3Hp"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="MF3-vx-2SS">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="108"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -594,11 +609,11 @@
             <objects>
                 <viewController storyboardIdentifier="chattingScene" id="YAb-P5-iaz" customClass="ChattingScene" customModule="XuChat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GfL-9s-IPr">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RvP-Wb-cBT">
-                                <rect key="frame" x="0.0" y="88" width="414" height="672"/>
+                                <rect key="frame" x="0.0" y="56" width="414" height="650"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="chattingCell" rowHeight="117" id="STK-KP-05K" customClass="ChattingCell" customModule="XuChat" customModuleProvider="target">
@@ -657,7 +672,7 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zBq-9F-pyd">
-                                <rect key="frame" x="0.0" y="764" width="414" height="49"/>
+                                <rect key="frame" x="0.0" y="710" width="414" height="49"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="mcP-E4-Bv4">
                                         <rect key="frame" x="8" y="8" width="398" height="33"/>
@@ -730,7 +745,7 @@
                     <tabBarItem key="tabBarItem" title="Users" image="list.bullet.indent" catalog="system" id="Acb-fb-f4g"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="84q-Ws-EVT">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="108"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -762,9 +777,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="MnK-ok-WbR"/>
+        <segue reference="1ae-yg-3qS"/>
+        <segue reference="YWa-e2-rTt"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="circle.fill" catalog="system" width="128" height="121"/>
         <image name="ercan" width="640" height="640"/>
         <image name="gear" catalog="system" width="128" height="119"/>
         <image name="list.bullet.indent" catalog="system" width="128" height="74"/>

@@ -43,9 +43,7 @@ class FireStoreHelper{
                 print(error.localizedDescription)
                 return
             }
-            
             guard let snapshot = snapshot else {return}
-            
             completionHandler(UserStatus(data: snapshot.data()))
         }
     }
@@ -85,13 +83,14 @@ class FireStoreHelper{
         
         let body : [String : Any] = [
             "to":to,
+            "priority": "high",
+            "content_available": true,
             "notification": [
                 "title": title,
                 "body": body,
                 "badge": "0",
                 "sound": "default"
             ],
-            "content_available": true,
             "data" : [
                 "userID" : userID,
                 "userName" : userName,

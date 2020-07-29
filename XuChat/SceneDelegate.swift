@@ -37,7 +37,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
-        print(FireStoreHelper.shared.usersID)
         FireStoreHelper.shared.removeFromRoom()
         setUserStatus(isOnline: false)
     }
@@ -69,8 +68,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
         FireStoreHelper.shared.removeFromRoom()
         setUserStatus(isOnline: false)
-
-        
     }
     
     func setUserStatus(isOnline : Bool){

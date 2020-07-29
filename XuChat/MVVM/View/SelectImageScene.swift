@@ -81,8 +81,7 @@ extension SelectImageScene {
                     ]) { (error) in
                         if error == nil {
                             self?.hud.dismiss()
-                            self?.dismiss(animated: true, completion: nil)
-                            print("Kullanıcı kaydedildi")
+                            self?.performSegue(withIdentifier: Constant.toMainTabBarFromRegister, sender: nil)
                         }
                     }
                 }
