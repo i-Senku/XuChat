@@ -21,6 +21,13 @@ class ChattingVM{
         self.senderID = senderID
     }
     
+    //For Background Update
+    init(){
+        db = Firestore.firestore()
+        currentID = Auth.auth().currentUser!.uid
+        self.senderID = ""
+    }
+    
     //MARK:- Read Message in Chatting
     func readMessage(completionHandler : @escaping ()->()){
         
@@ -100,12 +107,12 @@ class ChattingVM{
     //MARK:- Set status for writing or unwriting
     func setWritingStatus(status: WritingUserStatus){
         
-        let data : [String : Any] = ["isWriting" : status.isWriting,"time" : status.time]
+        let data : [String : Any] = ["isWriting" : status.isWriting,"time" : status.time,"isInRoom":status.isInRoom]
         db.collection("Message").document(senderID).collection("Status").document(currentID).setData(data)
     }
     
     //MARK:- Listen status for writing
-    func writingStatusListener(completionHandler : @escaping (Bool) -> ()){
+    func writingStatusListener(completionHandler : @escaping (_ writing : Bool,_ room : Bool) -> ()){
         db.collection("Message").document(currentID).collection("Status").document(senderID).addSnapshotListener { (snapshot, error) in
             
             if let error = error {
@@ -115,23 +122,15 @@ class ChattingVM{
             
             guard let snapshot = snapshot else {return}
             
-            if let status = snapshot.data()?["isWriting"] as? Bool {
-                
-                if status {
-                    completionHandler(true)
-                }else{
-                    completionHandler(false)
-                }
-            }else{
-                completionHandler(false)
-            }
-            
+            if let isWriting = snapshot.data()?["isWriting"] as? Bool, let isInRoom = snapshot.data()?["isInRoom"] as? Bool {
+                completionHandler(isWriting,isInRoom)
         }
+    }
     }
     
     //MARK:- Save Last Message For Current User and Other User
     func setLastMessage(userID : String, userImage : String, userName : String, lastMessage : String){
-           
+        
         let dataForMe : [String : Any] =
             [
                 "lastMessage" : lastMessage,
@@ -142,8 +141,9 @@ class ChattingVM{
         ]
         
         db.collection(Constant.messageCollection).document(currentID).collection("LastMessage").document(senderID).setData(dataForMe)
-
-        FireStoreHelper.shared.getMyUserData { (user) in
+        
+        if let user = FireStoreHelper.shared.currentUser{
+        
             let dataForUser : [String : Any] = [
                 "lastMessage" : lastMessage,
                 "time" : Timestamp(date: Date()),
@@ -154,6 +154,7 @@ class ChattingVM{
             
             self.db.collection(Constant.messageCollection).document(self.senderID).collection("LastMessage").document(self.currentID).setData(dataForUser)
         }
-
+        
     }
+        
 }

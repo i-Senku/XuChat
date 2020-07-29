@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         FirebaseApp.configure()
+        FireStoreHelper.shared.fetchCurrentUser()
         
         if #available(iOS 10.0, *) {
             
@@ -153,17 +154,22 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
         let imageURL = data["imageURL"] as! String
         chattingScene.userName = data["userName"] as? String
         chattingScene.userID = data["userID"] as? String
-        print(data["userID"])
         chattingScene.resource = ImageResource(downloadURL: URL(string: imageURL)!, cacheKey: imageURL)
+        
+        print(imageURL)
         
         if  let tabBarController = rootViewController as? UITabBarController,
             let navController = tabBarController.selectedViewController as? UINavigationController {
             
-            navController.pushViewController(chattingScene, animated: true)
+            if navController.viewControllers.count > 1 {
+                print("1 den fazla")
+                navController.viewControllers.removeLast()
+                navController.pushViewController(chattingScene, animated: true)
+            }else{
+                print("Else kısmı")
+                navController.pushViewController(chattingScene, animated: true)
+            }
         }
-        
-
-        
         
     }
     

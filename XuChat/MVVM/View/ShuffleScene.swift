@@ -91,22 +91,6 @@ extension ShuffleUserScene : UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        /*if infoUserContainer.isHidden {
-            
-            UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0, options: .curveEaseOut, animations: {
-                self.infoUserContainer.transform = CGAffineTransform(translationX: 0, y: -self.view.bounds.height/2)
-                self.infoUserContainer.isHidden = false
-            }, completion: nil)
-            
-        }else {
-            
-            UIView.animate(withDuration: 0.7) {
-                self.infoUserContainer.transform = .identity
-                self.infoUserContainer.isHidden = true
-            }
-        }*/
-
-        
         let list = shuffleVM.userList[indexPath.row]
         let url = URL(string: list.imageURL!)!
         let resource = ImageResource(downloadURL: url, cacheKey: list.imageURL!)
@@ -114,7 +98,6 @@ extension ShuffleUserScene : UITableViewDelegate,UITableViewDataSource {
         
         let userData : [String:Any] =
             ["userID" : list.userID, "userName" : list.userName!, "resource" : resource,"token":token]
-        print(userData)
         performSegue(withIdentifier: Constant.segueToChattingFromShuffle, sender: userData)
         
     }

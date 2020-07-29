@@ -31,10 +31,12 @@ class ChattingCell: UITableViewCell {
                 
                 if isMe {
                     containerTrailing.isActive = true
-                    containerView.backgroundColor = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
+                    containerView.backgroundColor = #colorLiteral(red: 0.1273299348, green: 0.4323398344, blue: 0.9686274529, alpha: 1)
+                    messageText.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
                 }else{
                     containerLeading.isActive = true
                     containerView.backgroundColor = .systemBackground
+                    messageText.textColor = #colorLiteral(red: 0.05882352963, green: 0.180392161, blue: 0.2470588237, alpha: 1)
                 }
                 containerView.layer.cornerRadius = 15
             }

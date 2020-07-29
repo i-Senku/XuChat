@@ -14,7 +14,10 @@ class FireStoreHelper{
     
     static let shared = FireStoreHelper()
     
-    let currentID = Auth.auth().currentUser?.uid
+    
+    var usersID : Set<String> = []
+    var currentUser : User!
+    let myID = Auth.auth().currentUser?.uid
     let db = Firestore.firestore()
     
     //MARK:- Set Status For User ( Online or Offline )
@@ -24,7 +27,7 @@ class FireStoreHelper{
             "permission" : permission,
             "time" : time
         ]
-        db.collection("UserStatus").document(currentID!).setData(data) { (error) in
+        db.collection("UserStatus").document(myID!).setData(data) { (error) in
             if let error = error {
                 print(error.localizedDescription)
                 return
@@ -48,7 +51,7 @@ class FireStoreHelper{
     }
     
     //MARK:- Get Data of Current User For Last Message Scene
-    func getMyUserData(completionHandler : @escaping (User)->() ){
+    func fetchCurrentUser(){
         guard let ID = Auth.auth().currentUser?.uid else {return}
         
         db.collection(Constant.userCollection).whereField("id", isEqualTo: ID).getDocuments { (snapshot, error) in
@@ -62,7 +65,7 @@ class FireStoreHelper{
                 
                 snapshot.documents.forEach { (queryDocumentSnapshot) in
                     let user = User(user: queryDocumentSnapshot.data())
-                    completionHandler(user)
+                    self.currentUser = user
                 }
             }
         }
@@ -101,10 +104,30 @@ class FireStoreHelper{
         let bodyData = try! JSONSerialization.data(withJSONObject: body, options: [])
             
         session.uploadTask(with: request, from: bodyData) { (data, response, error) in
-            print(body)
-            print(data)
         }.resume()
         
     }
+    
+    //MARK:- Deallocate & Locate In Room
+    
+    func deallocateRoom(id : String){
+        usersID.remove(id)
+    }
+    
+    func locateRoom(id : String){
+        usersID.insert(id)
+    }
+    
+    fileprivate func removeWithID(id : String){
+        db.collection(Constant.messageCollection).document(id).collection("Status").document(myID!).updateData(["isInRoom" : false])
+    }
+    
+    func removeFromRoom(){
+        usersID.forEach { (id) in
+            removeWithID(id: id)
+        }
+    }
+
+    
 
 }

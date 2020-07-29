@@ -49,15 +49,23 @@ class ChattingScene: UIViewController {
     var userID : String?
     var userName : String?
     var myUserName : String!
-    
     var token : String?
+    var isRoom = false
     
     var resource : ImageResource?
-    var count = 20
+    var count = 15
     
         
+    func setupUIScene(){
+        if #available(iOS 13.0, *) {
+            NotificationCenter.default.addObserver(self, selector: #selector(foreground), name: UIScene.willEnterForegroundNotification, object: nil)
+        } else {
+            NotificationCenter.default.addObserver(self, selector: #selector(foreground), name: UIApplication.willResignActiveNotification, object: nil)
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUIScene()
         messageText.backgroundColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
         chattingTableView.refreshControl = refreshControl
         initConfiguration()
@@ -73,6 +81,8 @@ class ChattingScene: UIViewController {
         messageVM = ChattingVM(senderID: userID!)
         readAllMessage()
         userStatusListener()
+        messageVM.setWritingStatus(status: WritingUserStatus(isWriting: false, time: Timestamp(date: Date()), isInRoom: true))
+        FireStoreHelper.shared.locateRoom(id: userID!)
 
     }
     
@@ -83,22 +93,37 @@ class ChattingScene: UIViewController {
         navigationBarImage.removeFromSuperview()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self)
+        FireStoreHelper.shared.deallocateRoom(id: userID!)
+        messageVM.setWritingStatus(status: WritingUserStatus(isWriting: false, time: Timestamp(date: Date()), isInRoom: false))
+    }
+    
+    @objc func foreground(){
+        print("Açıldı")
+        let isWrite = messageText.text.count>0
+        messageVM.setWritingStatus(status: WritingUserStatus(isWriting: isWrite, time: Timestamp(date: Date()), isInRoom: true))
+    }
     
     @IBAction func sendMessage(_ sender: Any) {
         guard let message = messageText.text else { return }
         
         messageVM.writeMessage(messageText: message.trimmingCharacters(in: .whitespacesAndNewlines))
         
-        if let userID = userID, let myID = Auth.auth().currentUser?.uid, let userImage = resource?.downloadURL.absoluteString, let userName = userName, let message = messageText.text , let to = token{
-
-            messageVM.setLastMessage(userID: userID, userImage: userImage, userName: userName, lastMessage: message)
+        if let userID = userID, let myID = Auth.auth().currentUser?.uid, let image = resource?.downloadURL.absoluteString, let userName = userName, let message = messageText.text , let to = token{
             
-            FireStoreHelper.shared.pushNotification(userID: myID, userName: userName, to: to, title: userName, body: message, imageURL: userImage)
+            messageVM.setLastMessage(userID: userID, userImage: image, userName: userName, lastMessage: message)
+            
+            if !isRoom {
+                let user = FireStoreHelper.shared.currentUser!
+                FireStoreHelper.shared.pushNotification(userID: myID, userName: myUserName, to: to, title: myUserName, body: message, imageURL: user.imageURL!)
+            }
         }
         
         messageText.text = ""
         textViewHeight.constant = messageText.contentSize.height
         messageText.becomeFirstResponder()
+        textViewDidEndEditing(messageText)
     }
 }
 
@@ -228,14 +253,19 @@ extension ChattingScene : UITextViewDelegate {
         if messageVM.messageList.count > 1 {
             chattingTableView.scrollToRow(at: IndexPath(row: messageVM.messageList.count-1, section: 0), at: .bottom, animated: true)
         }
+        
+        if messageText.text.count > 0 && messageText.text.count == 1  {
+            textViewDidBeginEditing(textView)
+        }
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        messageVM.setWritingStatus(status: WritingUserStatus(isWriting: true, time: Timestamp(date: Date())))
+        print("Çalışıyor")
+        messageVM.setWritingStatus(status: WritingUserStatus(isWriting: true, time: Timestamp(date: Date()), isInRoom: true))
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
-        messageVM.setWritingStatus(status: WritingUserStatus(isWriting: false, time: Timestamp(date: Date())))
+        messageVM.setWritingStatus(status: WritingUserStatus(isWriting: false, time: Timestamp(date: Date()), isInRoom: true))
     }
     
 }
@@ -253,8 +283,9 @@ extension ChattingScene {
                 
                 if status.isOnline {
                     
-                    self.messageVM.writingStatusListener { (status) in
-                        if status {
+                    self.messageVM.writingStatusListener { (isWrite,isInRoom) in
+                        self.isRoom = isInRoom
+                         if isWrite {
                             self.subTitle.text = "Yazıyor..."
                         }else{
                             self.subTitle.text = "Çevrimiçi"

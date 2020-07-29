@@ -12,11 +12,13 @@ import FirebaseFirestore
 class WritingUserStatus{
     
     let isWriting : Bool
+    let isInRoom : Bool
     let time : Timestamp
     
-    init(isWriting : Bool,time : Timestamp) {
+    init(isWriting : Bool,time : Timestamp,isInRoom : Bool) {
         self.isWriting = isWriting
         self.time = time
+        self.isInRoom = isInRoom
     }
     
 }

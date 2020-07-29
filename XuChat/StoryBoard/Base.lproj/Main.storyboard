@@ -611,28 +611,27 @@
                                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U4G-ef-nv7">
                                                     <rect key="frame" x="20" y="4" width="290" height="109"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ercan" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KPt-5V-TO2">
-                                                            <rect key="frame" x="8" y="8" width="274" height="69"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="17:20" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="75j-hA-HBX">
-                                                            <rect key="frame" x="8" y="85" width="274" height="16"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="17:20" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="75j-hA-HBX">
+                                                            <rect key="frame" x="249" y="85" width="33" height="16"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ercan" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KPt-5V-TO2">
+                                                            <rect key="frame" x="8" y="8" width="233" height="93"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
-                                                        <constraint firstItem="KPt-5V-TO2" firstAttribute="leading" secondItem="U4G-ef-nv7" secondAttribute="leading" constant="8" id="3Vu-VW-bMW"/>
-                                                        <constraint firstItem="KPt-5V-TO2" firstAttribute="top" secondItem="U4G-ef-nv7" secondAttribute="top" constant="8" id="5s9-DA-yCL"/>
-                                                        <constraint firstAttribute="trailing" secondItem="KPt-5V-TO2" secondAttribute="trailing" constant="8" id="Kpy-0n-75O"/>
-                                                        <constraint firstItem="75j-hA-HBX" firstAttribute="top" secondItem="KPt-5V-TO2" secondAttribute="bottom" constant="8" id="Nhp-MH-dai"/>
-                                                        <constraint firstItem="75j-hA-HBX" firstAttribute="leading" secondItem="U4G-ef-nv7" secondAttribute="leading" constant="8" id="pq6-H6-cZ7"/>
-                                                        <constraint firstAttribute="trailing" secondItem="75j-hA-HBX" secondAttribute="trailing" constant="8" id="rQw-VW-Taa"/>
-                                                        <constraint firstAttribute="bottom" secondItem="75j-hA-HBX" secondAttribute="bottom" constant="8" id="rwz-88-nDt"/>
+                                                        <constraint firstItem="KPt-5V-TO2" firstAttribute="top" secondItem="U4G-ef-nv7" secondAttribute="top" constant="8" id="1m5-zq-nkm"/>
+                                                        <constraint firstAttribute="bottom" secondItem="KPt-5V-TO2" secondAttribute="bottom" constant="8" id="1zI-hr-hK6"/>
+                                                        <constraint firstItem="75j-hA-HBX" firstAttribute="leading" secondItem="KPt-5V-TO2" secondAttribute="trailing" constant="8" id="Rdv-Qf-bdw"/>
+                                                        <constraint firstItem="KPt-5V-TO2" firstAttribute="leading" secondItem="U4G-ef-nv7" secondAttribute="leading" constant="8" id="bkP-In-fYQ"/>
+                                                        <constraint firstAttribute="trailing" secondItem="75j-hA-HBX" secondAttribute="trailing" constant="8" id="c87-fF-TVd"/>
+                                                        <constraint firstAttribute="bottom" secondItem="75j-hA-HBX" secondAttribute="bottom" constant="8" id="r84-Bw-SZM"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
