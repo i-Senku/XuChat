@@ -12,7 +12,7 @@
 
 ## Images
 
-- EKLENECEK.
+<img height = 500 width = full src="images/shuffle.png">  <img height = 500 width = full src="images/chatting.png">     <img height = 500 width = full src="images/messages.png">
 
 
 ## Design Pattern
