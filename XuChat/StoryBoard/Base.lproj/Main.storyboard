@@ -10,7 +10,7 @@
         <!--Sign In Scene-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="signIn" id="BYZ-38-t0r" customClass="SignInScene" customModule="XuChat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="signIn" modalTransitionStyle="flipHorizontal" modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="SignInScene" customModule="XuChat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -26,7 +26,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eHR-CH-tRN">
                                         <rect key="frame" x="0.0" y="44" width="374" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -49,7 +49,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="signIn" translatesAutoresizingMaskIntoConstraints="NO" id="5rf-np-nai">
-                                <rect key="frame" x="20" y="118" width="374" height="271"/>
+                                <rect key="frame" x="20" y="74" width="374" height="315"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Pvw-Qi-ELR">
                                 <rect key="frame" x="118.5" y="657" width="177" height="30"/>
@@ -123,7 +123,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rrJ-0b-s1n">
                                         <rect key="frame" x="0.0" y="88" width="374" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -407,7 +407,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Shuffle" largeTitleDisplayMode="always" id="Baj-oU-JX7">
                         <barButtonItem key="backBarButtonItem" title=" " id="alm-aw-ZjT"/>
-                        <barButtonItem key="rightBarButtonItem" image="shuffle" catalog="system" id="2kx-eV-Xfx">
+                        <barButtonItem key="rightBarButtonItem" title="Sign Out" id="2kx-eV-Xfx">
                             <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="exit:" destination="Gy6-Wi-Bz8" id="Eow-Xu-l2d"/>
@@ -419,11 +419,12 @@
                         <outlet property="infoUserContainer" destination="qJz-dp-NWW" id="QJ2-C5-hKP"/>
                         <outlet property="tableView" destination="Kp2-eP-Ruk" id="hCZ-9q-pst"/>
                         <segue destination="YAb-P5-iaz" kind="show" identifier="toChattingFromShuffle" id="1ae-yg-3qS"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="SignOut" modalTransitionStyle="flipHorizontal" id="DtT-x5-XjD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JOI-Y5-nWA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1257.9710144927537" y="-1114.2857142857142"/>
+            <point key="canvasLocation" x="1267" y="-1114"/>
         </scene>
         <!--Message-->
         <scene sceneID="mQh-F2-dbl">
@@ -613,7 +614,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RvP-Wb-cBT">
-                                <rect key="frame" x="0.0" y="56" width="414" height="650"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="755"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="chattingCell" rowHeight="117" id="STK-KP-05K" customClass="ChattingCell" customModule="XuChat" customModuleProvider="target">
@@ -672,7 +673,7 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zBq-9F-pyd">
-                                <rect key="frame" x="0.0" y="710" width="414" height="49"/>
+                                <rect key="frame" x="0.0" y="759" width="414" height="49"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="mcP-E4-Bv4">
                                         <rect key="frame" x="8" y="8" width="398" height="33"/>
@@ -778,7 +779,8 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="1ae-yg-3qS"/>
-        <segue reference="YWa-e2-rTt"/>
+        <segue reference="Y0s-MD-eVN"/>
+        <segue reference="DtT-x5-XjD"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="circle.fill" catalog="system" width="128" height="121"/>
@@ -788,7 +790,6 @@
         <image name="message.fill" catalog="system" width="128" height="113"/>
         <image name="paperplane.fill" catalog="system" width="128" height="121"/>
         <image name="premium" width="256" height="256"/>
-        <image name="shuffle" catalog="system" width="128" height="93"/>
         <image name="signIn" width="1316" height="807"/>
         <image name="signup" width="1406" height="965"/>
         <image name="upload" width="1000" height="854"/>

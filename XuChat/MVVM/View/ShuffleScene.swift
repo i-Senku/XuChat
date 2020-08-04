@@ -47,18 +47,25 @@ class ShuffleUserScene: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! ChattingScene
-        let userData = sender as! [String : Any]
-        vc.userID = userData["userID"] as? String
-        vc.userName = userData["userName"] as? String
-        vc.resource = userData["resource"] as? ImageResource
-        vc.token = userData["token"] as? String
+        
+        if let signInVC = segue.destination as? SignInScene {
+            //** SignIN
+            signInVC.navigationItem.hidesBackButton = true
+            
+        }else{
+            let vc = segue.destination as! ChattingScene
+            let userData = sender as! [String : Any]
+            vc.userID = userData["userID"] as? String
+            vc.userName = userData["userName"] as? String
+            vc.resource = userData["resource"] as? ImageResource
+            vc.token = userData["token"] as? String
+        }
     }
     
     @IBAction func exit(_ sender: Any) {
         do {
             try Auth.auth().signOut()
-            self.dismiss(animated: true, completion: nil)
+            performSegue(withIdentifier: Constant.signOut, sender: nil)
         } catch let e {
             print(e.localizedDescription)
         }

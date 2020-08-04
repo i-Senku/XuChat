@@ -21,5 +21,6 @@ struct Constant {
     static let segueToChattingFromShuffle = "toChattingFromShuffle"
     static let toTabbar = "toTabbar"
     static let toMainTabBarFromRegister = "toMainTabBarFromRegister"
+    static let signOut = "SignOut"
     
 }
